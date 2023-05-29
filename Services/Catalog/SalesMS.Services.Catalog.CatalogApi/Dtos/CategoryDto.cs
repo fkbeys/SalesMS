@@ -1,4 +1,4 @@
-﻿namespace SalesMS.Services.Catalog.CatalogApi.Dtos.Category
+﻿namespace SalesMS.Services.Catalog.CatalogApi.Dtos
 {
     public class CategoryDto
     {

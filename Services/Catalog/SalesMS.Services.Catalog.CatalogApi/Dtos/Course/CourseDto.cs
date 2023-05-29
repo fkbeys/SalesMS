@@ -1,6 +1,4 @@
-﻿using SalesMS.Services.Catalog.CatalogApi.Dtos.Category;
-
-namespace SalesMS.Services.Catalog.CatalogApi.Dtos.Course
+﻿namespace SalesMS.Services.Catalog.CatalogApi.Dtos.Course
 {
     public class CourseDto
     {

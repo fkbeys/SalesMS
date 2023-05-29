@@ -1,15 +1,23 @@
-var builder = WebApplication.CreateBuilder(args);
+using SalesMS.Services.Catalog.CatalogApi.Mappings;
+using SalesMS.Services.Catalog.CatalogApi.StartupExtentions;
 
+var builder = WebApplication.CreateBuilder(args);
+IConfiguration conf = builder.Configuration;
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.RegisterDbSettings(conf);
+
+ 
+
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
