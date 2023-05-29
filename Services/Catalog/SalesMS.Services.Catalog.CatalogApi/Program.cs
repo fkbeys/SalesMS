@@ -1,4 +1,5 @@
 using SalesMS.Services.Catalog.CatalogApi.Mappings;
+using SalesMS.Services.Catalog.CatalogApi.Services;
 using SalesMS.Services.Catalog.CatalogApi.StartupExtentions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.RegisterDbSettings(conf);
-
- 
+builder.Services.RegisterDbServices();
 
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));

@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace SalesMS.Services.Catalog.CatalogApi.Models
 {
-    internal class Course
+    public class Course
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -32,17 +32,17 @@ namespace SalesMS.Services.Catalog.CatalogApi.Models
         public string userId { get; set; }
 
 
-        public Feature feature { get; set; }
+        public Feature? feature { get; set; }
 
 
 
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string categoryId { get; set; }
+        // [BsonRepresentation(BsonType.ObjectId)]
+        public string? categoryId { get; set; }
 
 
         [BsonIgnore]
-        public Category category { get; set; }
+        public Category? category { get; set; }
 
     }
 }

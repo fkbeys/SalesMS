@@ -2,7 +2,7 @@
 
 namespace SalesMS.Shared.SharedClass.Dtos
 {
-    public class GenericResponse<T> where T : class
+    public class GenericResponse<T> 
     {
         //static factory method
         public T? data { get; private set; }

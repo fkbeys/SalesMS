@@ -1,6 +1,6 @@
 ﻿namespace SalesMS.Services.Catalog.CatalogApi.AppSettings
 {
-    internal interface IDatabaseSettings
+    public interface IDatabaseSettings
     {
 
 

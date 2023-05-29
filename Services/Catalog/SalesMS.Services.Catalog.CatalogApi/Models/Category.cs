@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace SalesMS.Services.Catalog.CatalogApi.Models
 {
-    internal class Category
+    public class Category
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
