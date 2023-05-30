@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MongoDB.Driver;
-using SalesMS.Services.Catalog.CatalogApi.AppSettings;
+using SalesMS.Services.Catalog.CatalogApi.ApplicationSettings;
 using SalesMS.Services.Catalog.CatalogApi.Dtos;
 using SalesMS.Services.Catalog.CatalogApi.Dtos.Course;
 using SalesMS.Services.Catalog.CatalogApi.Models;
@@ -95,7 +95,7 @@ namespace SalesMS.Services.Catalog.CatalogApi.Services
                 {
 
                 }
-                 
+
                 return GenericResponse<CourseDto>.Success(course, 200);
 
             }

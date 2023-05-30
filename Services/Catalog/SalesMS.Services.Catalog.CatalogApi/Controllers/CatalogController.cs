@@ -33,7 +33,7 @@ namespace SalesMS.Services.Catalog.CatalogApi.Controllers
             var data = await _CategoryService.FindByIdAsync(id);
             return ResponseResolver(data as dynamic);
         }
-         
+
         [HttpPut]
         public async Task<IActionResult> UpdateAsync([FromBody] CategoryDto CategoryDto)
         {

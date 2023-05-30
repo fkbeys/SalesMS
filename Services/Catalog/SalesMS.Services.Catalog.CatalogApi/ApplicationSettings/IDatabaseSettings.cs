@@ -1,4 +1,4 @@
-﻿namespace SalesMS.Services.Catalog.CatalogApi.AppSettings
+﻿namespace SalesMS.Services.Catalog.CatalogApi.ApplicationSettings
 {
     public interface IDatabaseSettings
     {

@@ -1,5 +1,4 @@
 using SalesMS.Services.Catalog.CatalogApi.Mappings;
-using SalesMS.Services.Catalog.CatalogApi.Services;
 using SalesMS.Services.Catalog.CatalogApi.StartupExtentions;
 
 var builder = WebApplication.CreateBuilder(args);

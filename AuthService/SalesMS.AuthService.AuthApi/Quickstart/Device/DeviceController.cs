@@ -2,10 +2,6 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using IdentityServer4.Configuration;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
@@ -16,8 +12,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SalesMS.AuthService.AuthApi.Quickstart.Consent;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace IdentityServerHost.Quickstart.UI
+namespace SalesMS.AuthService.AuthApi.Quickstart.Device
 {
     [Authorize]
     [SecurityHeaders]

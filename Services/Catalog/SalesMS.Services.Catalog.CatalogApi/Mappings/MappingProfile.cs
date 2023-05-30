@@ -14,7 +14,7 @@ namespace SalesMS.Services.Catalog.CatalogApi.Mappings
             CreateMap<Feature, FeatureDto>().ReverseMap();
             CreateMap<Course, CourseCreateDto>().ReverseMap();
             CreateMap<Course, CourseUpdateDto>().ReverseMap();
-        } 
+        }
     }
-  
+
 }

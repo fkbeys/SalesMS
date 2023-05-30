@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MongoDB.Driver;
-using SalesMS.Services.Catalog.CatalogApi.AppSettings;
+using SalesMS.Services.Catalog.CatalogApi.ApplicationSettings;
 using SalesMS.Services.Catalog.CatalogApi.Dtos;
 using SalesMS.Services.Catalog.CatalogApi.Models;
 using SalesMS.Shared.SharedClass.Dtos;

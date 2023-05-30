@@ -1,8 +1,9 @@
-using System;
 using IdentityServer4.Models;
 using Microsoft.AspNetCore.Mvc;
+using SalesMS.AuthService.AuthApi.Quickstart.Account;
+using System;
 
-namespace IdentityServerHost.Quickstart.UI
+namespace SalesMS.AuthService.AuthApi.Quickstart
 {
     public static class Extensions
     {
@@ -20,7 +21,7 @@ namespace IdentityServerHost.Quickstart.UI
         {
             controller.HttpContext.Response.StatusCode = 200;
             controller.HttpContext.Response.Headers["Location"] = "";
-            
+
             return controller.View(viewName, new RedirectViewModel { RedirectUrl = redirectUri });
         }
     }

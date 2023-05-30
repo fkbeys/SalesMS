@@ -1,6 +1,4 @@
-﻿using SalesMS.Services.Catalog.CatalogApi.AppSettings;
-
-namespace SalesMS.Services.Catalog.CatalogApi.ApplicationSettings
+﻿namespace SalesMS.Services.Catalog.CatalogApi.ApplicationSettings
 {
     public class DatabaseSettings : IDatabaseSettings
     {

@@ -5,7 +5,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SalesMS.AuthService.AuthApi.Data;
@@ -35,11 +34,7 @@ namespace SalesMS.AuthService.AuthApi
 
             try
             {
-                //var seed = true;
-                //if (seed)
-                //{
-                //    args = args.Except(new[] { "/seed" }).ToArray();
-                //}
+
 
                 var host = CreateHostBuilder(args).Build();
 
@@ -58,16 +53,6 @@ namespace SalesMS.AuthService.AuthApi
                         userManagerObj.CreateAsync(new ApplicationUser { UserName = "admin", Email = "admin@admin.com", }, "Password12*").Wait();
                     }
                 }
-
-                //if (seed)
-                //{
-                //    Log.Information("Seeding database...");
-                //    var config = host.Services.GetRequiredService<IConfiguration>();
-                //    var connectionString = config.GetConnectionString("DefaultConnection");
-                //    SeedData.EnsureSeedData(connectionString);
-                //    Log.Information("Done seeding database.");
-                //    return 0;
-                //}
 
                 Log.Information("Starting host...");
                 host.Run();
