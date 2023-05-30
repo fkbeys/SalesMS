@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SalesMS.Services.Catalog.CatalogApi.Dtos.Course;
 using SalesMS.Services.Catalog.CatalogApi.Services;
 using SalesMS.Shared.SharedClass.Dtos;
 
 namespace SalesMS.Services.Catalog.CatalogApi.Controllers
-{
+{ 
     public class CourseController : GenericBaseController
     {
         private readonly ICourseService _courseService;

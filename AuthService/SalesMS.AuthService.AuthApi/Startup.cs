@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Logging;
 using SalesMS.AuthService.AuthApi.Data;
 using SalesMS.AuthService.AuthApi.Models;
 using SalesMS.AuthService.AuthApi.Services;
@@ -38,6 +39,9 @@ namespace SalesMS.AuthService.AuthApi
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            IdentityModelEventSource.ShowPII = true;
+
+
             var builder = services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
@@ -47,15 +51,19 @@ namespace SalesMS.AuthService.AuthApi
 
                 // see https://identityserver4.readthedocs.io/en/latest/topics/resources.html
                 options.EmitStaticAudienceClaim = true;
+                 
+
             })
                    //.AddInMemoryIdentityResources(Config.IdentityResources)
                    //.AddInMemoryApiResources(Config.ApiResource)
                    //.AddInMemoryClients(Config.Clients)
                    //.AddAspNetIdentity<ApplicationUser>();
-                   .AddInMemoryIdentityResources(Config.IdentityResources)
-                   .AddInMemoryApiResources(Config.ApiResource)
-                   .AddInMemoryApiScopes(Config.ApiScopes)  // Add this line to register API scopes
-                   .AddInMemoryClients(Config.Clients)
+
+
+                   .AddInMemoryIdentityResources(IdendityCustomConfig.IdentityResources)
+                   .AddInMemoryApiResources(IdendityCustomConfig.ApiResource)
+                   .AddInMemoryApiScopes(IdendityCustomConfig.ApiScopes)  // Add this line to register API scopes
+                   .AddInMemoryClients(IdendityCustomConfig.Clients)
                    .AddAspNetIdentity<ApplicationUser>();
 
             // not recommended for production - you need to store your key material somewhere secure
