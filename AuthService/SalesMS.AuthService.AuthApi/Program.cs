@@ -3,10 +3,13 @@
 
 
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SalesMS.AuthService.AuthApi.Data;
+using SalesMS.AuthService.AuthApi.Models;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
@@ -32,39 +35,39 @@ namespace SalesMS.AuthService.AuthApi
 
             try
             {
-                var seed = true;
-                if (seed)
-                {
-                    args = args.Except(new[] { "/seed" }).ToArray();
-                }
+                //var seed = true;
+                //if (seed)
+                //{
+                //    args = args.Except(new[] { "/seed" }).ToArray();
+                //}
 
                 var host = CreateHostBuilder(args).Build();
 
-                //using (var scope = host.Services.CreateScope())
-                //{
-                //    var serviceProvider = scope.ServiceProvider;
-                //    var dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
-
-                //    dbContext.Database.EnsureCreated();
-                //    dbContext.Database.Migrate();
-
-                //    var userManagerObj = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-
-                //    if (!userManagerObj.Users.Any())
-                //    {
-                //        userManagerObj.CreateAsync(new ApplicationUser { UserName = "admin", Email = "admin@admin.com", }, "Password12*");
-                //    }
-                //}
-
-                if (seed)
+                using (var scope = host.Services.CreateScope())
                 {
-                    Log.Information("Seeding database...");
-                    var config = host.Services.GetRequiredService<IConfiguration>();
-                    var connectionString = config.GetConnectionString("DefaultConnection");
-                    SeedData.EnsureSeedData(connectionString);
-                    Log.Information("Done seeding database.");
-                    return 0;
+                    var serviceProvider = scope.ServiceProvider;
+                    var dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
+
+                    dbContext.Database.EnsureCreated();
+                    dbContext.Database.Migrate();
+
+                    var userManagerObj = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+                    if (!userManagerObj.Users.Any())
+                    {
+                        userManagerObj.CreateAsync(new ApplicationUser { UserName = "admin", Email = "admin@admin.com", }, "Password12*").Wait();
+                    }
                 }
+
+                //if (seed)
+                //{
+                //    Log.Information("Seeding database...");
+                //    var config = host.Services.GetRequiredService<IConfiguration>();
+                //    var connectionString = config.GetConnectionString("DefaultConnection");
+                //    SeedData.EnsureSeedData(connectionString);
+                //    Log.Information("Done seeding database.");
+                //    return 0;
+                //}
 
                 Log.Information("Starting host...");
                 host.Run();
