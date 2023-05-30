@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SalesMS.AuthService.AuthApi.Data;
 using SalesMS.AuthService.AuthApi.Models;
+using SalesMS.AuthService.AuthApi.Services;
 
 namespace SalesMS.AuthService.AuthApi
 {
@@ -66,6 +67,8 @@ namespace SalesMS.AuthService.AuthApi
                     options.ClientId = "copy client ID from Google here";
                     options.ClientSecret = "copy client secret from Google here";
                 });
+
+            services.AddScoped<IUserService, UserService>();
         }
 
         public void Configure(IApplicationBuilder app)

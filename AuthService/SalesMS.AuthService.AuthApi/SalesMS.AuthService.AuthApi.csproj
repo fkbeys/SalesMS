@@ -23,4 +23,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.5" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\SalesMS.Shared.SharedClass\SalesMS.Shared.SharedClass.csproj" />
+  </ItemGroup>
 </Project>

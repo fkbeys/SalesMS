@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SalesMS.Services.Catalog.CatalogApi.Dtos;
 using SalesMS.Services.Catalog.CatalogApi.Services;
+using SalesMS.Shared.SharedClass.Dtos;
 
 namespace SalesMS.Services.Catalog.CatalogApi.Controllers
 {
-    public class CategoryController : BaseController
+    public class CategoryController : GenericBaseController
     {
         private readonly ICategoryService _CategoryService;
 
