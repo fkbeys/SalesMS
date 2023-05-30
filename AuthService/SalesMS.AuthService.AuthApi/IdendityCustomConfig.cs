@@ -19,10 +19,7 @@ namespace SalesMS.AuthService.AuthApi
         public static string IdentityServerApi = IdentityServerConstants.LocalApi.ScopeName;
         public static string clientId = "WebMvcClient";
         public static string userClientId = "WebMvcClientForUser";
-
-
-
-
+         
 
         public static IEnumerable<ApiResource> ApiResource => new ApiResource[]
         {
@@ -66,7 +63,7 @@ namespace SalesMS.AuthService.AuthApi
                     ClientSecrets={ new Secret("secret".Sha256() ) },
                     AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
                     AllowedScopes={ IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.Address, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,
-                         IdentityServerConstants.StandardScopes.OfflineAccess,
+                         IdentityServerConstants.StandardScopes.OfflineAccess,IdentityServerApi
                      },
                     AccessTokenLifetime=3600,  //3600 seconds=1 hour
                     AllowOfflineAccess=true, // it opens the refresh token

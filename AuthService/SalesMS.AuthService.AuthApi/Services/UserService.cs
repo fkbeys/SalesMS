@@ -42,5 +42,19 @@ namespace SalesMS.AuthService.AuthApi.Services
             }
 
         }
+
+        public async Task<GenericResponse<ApplicationUser>> FindUserById(string id)
+        {
+            try
+            {
+                var user = await userManager.FindByIdAsync(id);
+                return GenericResponse<ApplicationUser>.Success(user, 200);
+            }
+            catch (Exception ex)
+            {
+                return GenericResponse<ApplicationUser>.Fail(ex.Message, 400);
+            }
+        }
+
     }
 }

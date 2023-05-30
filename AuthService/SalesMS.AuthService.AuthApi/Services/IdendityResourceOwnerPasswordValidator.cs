@@ -18,7 +18,7 @@ namespace SalesMS.AuthService.AuthApi.Services
 
         public async Task ValidateAsync(ResourceOwnerPasswordValidationContext context)
         {
-            var existUser = await _userManager.FindByEmailAsync(context.UserName);
+            var existUser = await _userManager.FindByNameAsync(context.UserName);
 
             var errors = new Dictionary<string, object>();
             errors.Add("errors", new List<string> { "Email or Password Error!" });
