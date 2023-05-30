@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using SalesMS.AuthService.AuthApi.Data;
 using SalesMS.AuthService.AuthApi.Models;
 using SalesMS.AuthService.AuthApi.Services;
@@ -29,6 +28,7 @@ namespace SalesMS.AuthService.AuthApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalApiAuthentication();
             services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -48,10 +48,15 @@ namespace SalesMS.AuthService.AuthApi
                 // see https://identityserver4.readthedocs.io/en/latest/topics/resources.html
                 options.EmitStaticAudienceClaim = true;
             })
-                .AddInMemoryIdentityResources(Config.IdentityResources) 
-                .AddInMemoryClients(Config.Clients)
-                .AddAspNetIdentity<ApplicationUser>()
-                .AddInMemoryApiResources(Config.ApiResource);
+                   //.AddInMemoryIdentityResources(Config.IdentityResources)
+                   //.AddInMemoryApiResources(Config.ApiResource)
+                   //.AddInMemoryClients(Config.Clients)
+                   //.AddAspNetIdentity<ApplicationUser>();
+                   .AddInMemoryIdentityResources(Config.IdentityResources)
+                   .AddInMemoryApiResources(Config.ApiResource)
+                   .AddInMemoryApiScopes(Config.ApiScopes)  // Add this line to register API scopes
+                   .AddInMemoryClients(Config.Clients)
+                   .AddAspNetIdentity<ApplicationUser>();
 
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();
@@ -73,17 +78,17 @@ namespace SalesMS.AuthService.AuthApi
 
         public void Configure(IApplicationBuilder app)
         {
-            if (Environment.IsDevelopment())
+            // if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
 
             app.UseStaticFiles();
-
             app.UseRouting();
-            app.UseIdentityServer();
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.UseIdentityServer();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();

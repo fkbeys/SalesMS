@@ -23,8 +23,8 @@ namespace SalesMS.AuthService.AuthApi
         public static IEnumerable<IdentityResource> IdentityResources =>
                    new IdentityResource[]
                    {
-                //new IdentityResources.OpenId(),
-                //new IdentityResources.Profile(),
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile(),
 
                    };
 
@@ -33,7 +33,8 @@ namespace SalesMS.AuthService.AuthApi
             {
                 //new ApiScope("scope1"),
                 //new ApiScope("scope2"),
-                new ApiScope(IdentityServerConstants.LocalApi.ScopeName),
+                //new ApiScope(IdentityServerConstants.LocalApi.ScopeName,""),
+                new ApiScope("IdentityServerApi", "Access to Identity Server API"),
                 new ApiScope("catalog_fullpermition","Full access for Catalog api"),
                 new ApiScope("photo_stock_fullpermition","Full access for Photo Stock api"),
             };
@@ -43,40 +44,13 @@ namespace SalesMS.AuthService.AuthApi
             {
 
                 new Client{
-                    ClientName="WebMvc",
+                    ClientName="Asp.Net Core MVC",
                     ClientId="WebMvcClient",
                     ClientSecrets={ new Secret("secret".Sha256() ) },
                     AllowedGrantTypes=GrantTypes.ClientCredentials,
-                    AllowedScopes={ "catalog_fullpermition", "photo_stock_fullpermition", IdentityServerConstants.LocalApi.ScopeName }
+                    AllowedScopes={ "catalog_fullpermition", "photo_stock_fullpermition", IdentityServerConstants.LocalApi.ScopeName },
+                    AllowOfflineAccess=true,
                 },
-
-                //// m2m client credentials flow client
-                //new Client
-                //{
-                //    ClientId = "m2m.client",
-                //    ClientName = "Client Credentials Client",
-
-                //    AllowedGrantTypes = GrantTypes.ClientCredentials,
-                //    ClientSecrets = { new Secret("511536EF-F270-4058-80CA-1C89C192F69A".Sha256()) },
-
-                //    AllowedScopes = { "scope1" }
-                //},
-
-                //// interactive client using code flow + pkce
-                //new Client
-                //{
-                //    ClientId = "interactive",
-                //    ClientSecrets = { new Secret("49C1A7E1-0C79-4A89-A3D6-A37998FB86B0".Sha256()) },
-
-                //    AllowedGrantTypes = GrantTypes.Code,
-
-                //    RedirectUris = { "https://localhost:44300/signin-oidc" },
-                //    FrontChannelLogoutUri = "https://localhost:44300/signout-oidc",
-                //    PostLogoutRedirectUris = { "https://localhost:44300/signout-callback-oidc" },
-
-                //    AllowOfflineAccess = true,
-                //    AllowedScopes = { "openid", "profile", "scope2" }
-                //},
             };
     }
 }
