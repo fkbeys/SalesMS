@@ -4,7 +4,6 @@
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SalesMS.AuthService.AuthApi.Data;
@@ -44,7 +43,7 @@ namespace SalesMS.AuthService.AuthApi
                     var dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
 
                     dbContext.Database.EnsureCreated();
-                    dbContext.Database.Migrate();
+                    //dbContext.Database.Migrate();
 
                     var userManagerObj = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
