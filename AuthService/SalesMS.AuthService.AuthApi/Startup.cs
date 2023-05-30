@@ -39,6 +39,8 @@ namespace SalesMS.AuthService.AuthApi
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+
+
             IdentityModelEventSource.ShowPII = true;
 
 
@@ -51,20 +53,16 @@ namespace SalesMS.AuthService.AuthApi
 
                 // see https://identityserver4.readthedocs.io/en/latest/topics/resources.html
                 options.EmitStaticAudienceClaim = true;
-                 
+
 
             })
-                   //.AddInMemoryIdentityResources(Config.IdentityResources)
-                   //.AddInMemoryApiResources(Config.ApiResource)
-                   //.AddInMemoryClients(Config.Clients)
-                   //.AddAspNetIdentity<ApplicationUser>();
-
-
                    .AddInMemoryIdentityResources(IdendityCustomConfig.IdentityResources)
                    .AddInMemoryApiResources(IdendityCustomConfig.ApiResource)
                    .AddInMemoryApiScopes(IdendityCustomConfig.ApiScopes)  // Add this line to register API scopes
                    .AddInMemoryClients(IdendityCustomConfig.Clients)
                    .AddAspNetIdentity<ApplicationUser>();
+
+            builder.AddResourceOwnerValidator<IdendityResourceOwnerPasswordValidator>();
 
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();
