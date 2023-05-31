@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SalesMS.Services.Catalog.CatalogApi.Dtos;
 using SalesMS.Services.Catalog.CatalogApi.Services;
 using SalesMS.Shared.SharedClass.Dtos;
 
 namespace SalesMS.Services.Catalog.CatalogApi.Controllers
 {
-   // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CategoryController : GenericBaseController
     {
         private readonly ICategoryService _CategoryService;

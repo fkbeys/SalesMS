@@ -1,3 +1,4 @@
 
-SalesMS.AuthService.AuthApi         => 5001
-SalesMS.Services.Catalog.CatalogApi => 5011
+ AuthApi       => 5001
+ CatalogApi    => 5011
+ PhotoStockApi => 5012

@@ -19,7 +19,7 @@ namespace SalesMS.AuthService.AuthApi
         public static string IdentityServerApi = IdentityServerConstants.LocalApi.ScopeName;
         public static string clientId = "WebMvcClient";
         public static string userClientId = "WebMvcClientForUser";
-         
+
 
         public static IEnumerable<ApiResource> ApiResource => new ApiResource[]
         {

@@ -20,7 +20,7 @@ builder.Services.RegisterDbServices();
 
 builder.Services.AddAuthorization();
 
-var tx= conf["IdendityServerUrl"]; 
+var tx = conf["IdendityServerUrl"];
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     opt =>
