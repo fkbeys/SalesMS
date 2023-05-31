@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SalesMS.Services.Catalog.CatalogApi.Dtos;
 using SalesMS.Services.Catalog.CatalogApi.Services;
-using SalesMS.Shared.SharedClass.Dtos;
+using SalesMS.Shared.SharedClass.BaseClasses;
 
 namespace SalesMS.Services.Catalog.CatalogApi.Controllers
 {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SalesMS.AuthService.AuthApi.Dtos;
 using SalesMS.AuthService.AuthApi.Services;
-using SalesMS.Shared.SharedClass.Dtos;
+using SalesMS.Shared.SharedClass.BaseClasses;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;

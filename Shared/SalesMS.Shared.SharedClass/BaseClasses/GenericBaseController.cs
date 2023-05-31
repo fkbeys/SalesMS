@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesMS.Shared.SharedClass.Dtos;
 
-namespace SalesMS.Shared.SharedClass.Dtos
+namespace SalesMS.Shared.SharedClass.BaseClasses
 {
     [Route("api/[controller]/[Action]")]
     [ApiController]
