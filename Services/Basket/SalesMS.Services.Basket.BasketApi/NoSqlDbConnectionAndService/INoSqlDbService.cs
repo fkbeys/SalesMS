@@ -6,6 +6,6 @@ namespace SalesMS.Services.Basket.BasketApi.NoSqlDbService
     public interface INoSqlDbService
     {
 
-        public IDatabase GetRedisDb(int dbNo);
+        public IDatabase GetDb(int dbNo);
     }
 }

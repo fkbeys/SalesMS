@@ -13,7 +13,7 @@ namespace SalesMS.Shared.SharedClass.Dtos
         public int statusCode { get; private set; }
         public List<string>? errors { get; private set; }
 
-        public static GenericResponse<T> Success(T data, int statuscode)
+        public static GenericResponse<T> Success(T? data, int statuscode)
         {
             return new GenericResponse<T> { data = data, statusCode = statuscode, isSuccess = true, errors = null };
         }

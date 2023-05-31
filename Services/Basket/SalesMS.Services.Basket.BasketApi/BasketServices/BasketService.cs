@@ -1,6 +1,8 @@
-﻿using SalesMS.Services.Basket.BasketApi.Dtos;
+﻿
+using SalesMS.Services.Basket.BasketApi.Dtos;
 using SalesMS.Services.Basket.BasketApi.NoSqlDbService;
 using SalesMS.Shared.SharedClass.Dtos;
+using System.Text.Json;
 
 namespace SalesMS.Services.Basket.BasketApi.BasketServices
 {
@@ -12,19 +14,62 @@ namespace SalesMS.Services.Basket.BasketApi.BasketServices
         {
             this.noSqlDbService = noSqlDbService;
         }
-        public Task<GenericResponse<bool>> Delete(string userId)
+
+
+        public async Task<GenericResponse<BasketDto>> GetBasket(string userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var basketsJsonString = await noSqlDbService.GetDb(1).StringGetAsync(userId);
+
+                var tx = basketsJsonString.ToString();
+
+                BasketDto? baskets = JsonSerializer.Deserialize<BasketDto>(tx);
+
+                return GenericResponse<BasketDto>.Success(baskets, 200);
+            }
+            catch (Exception ex)
+            {
+                return GenericResponse<BasketDto>.Fail(ex.Message, 404);
+            }
         }
 
-        public Task<GenericResponse<BasketDto>> GetBasket(string userId)
+        public async Task<GenericResponse<bool>> SaveOrUpdate(BasketDto basket)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var status = await noSqlDbService.GetDb(1).StringSetAsync(basket.userId, JsonSerializer.Serialize(basket));
+                if (!status)
+                {
+                    throw new Exception("Error on SaveOrUpdate operation!") { };
+                }
+                return GenericResponse<bool>.Success(200);
+            }
+            catch (Exception ex)
+            {
+                return GenericResponse<bool>.Fail(ex.Message, 404);
+            }
         }
 
-        public Task<GenericResponse<bool>> SaveOrUpdate(BasketDto basket)
+
+        public async Task<GenericResponse<bool>> Delete(string userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var status = await noSqlDbService.GetDb(1).KeyDeleteAsync(userId);
+                if (!status)
+                {
+                    throw new Exception("Error on delete operation!") { };
+                }
+
+                return GenericResponse<bool>.Success(200);
+            }
+            catch (Exception ex)
+            {
+                return GenericResponse<bool>.Fail(ex.Message, 404);
+            }
         }
+
+
     }
 }

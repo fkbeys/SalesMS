@@ -11,7 +11,7 @@ namespace SalesMS.Services.Basket.BasketApi.NoSqlDbService
         public RedisService(INoSqlDbSettings noSqlDbSettings)
         {
             this._noSqlDbSettings = noSqlDbSettings;
-            GetRedisDb(0);
+            GetDb(0);
         }
 
         private void connect()
@@ -19,7 +19,7 @@ namespace SalesMS.Services.Basket.BasketApi.NoSqlDbService
             _connectionMultiplexer = ConnectionMultiplexer.Connect($"{_noSqlDbSettings.Host}:{_noSqlDbSettings.Port}");
         }
 
-        public IDatabase GetRedisDb(int dbNo)
+        public IDatabase GetDb(int dbNo)
         {
             connect();
             IDatabase database = _connectionMultiplexer.GetDatabase(dbNo);
