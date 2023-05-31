@@ -1,4 +1,4 @@
-﻿using SalesMS.Services.Catalog.CatalogApi.Services;
+﻿using SalesMS.Services.Catalog.CatalogApi.CatalogServices;
 
 namespace SalesMS.Services.Catalog.CatalogApi.StartupExtentions
 {

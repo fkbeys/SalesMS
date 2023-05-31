@@ -5,7 +5,7 @@ using SalesMS.Services.Catalog.CatalogApi.Dtos;
 using SalesMS.Services.Catalog.CatalogApi.Models;
 using SalesMS.Shared.SharedClass.Dtos;
 
-namespace SalesMS.Services.Catalog.CatalogApi.Services
+namespace SalesMS.Services.Catalog.CatalogApi.CatalogServices
 {
     public class CategoryService : ICategoryService
     {

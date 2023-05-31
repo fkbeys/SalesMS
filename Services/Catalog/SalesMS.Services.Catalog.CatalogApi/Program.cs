@@ -20,7 +20,7 @@ builder.Services.RegisterDbServices();
 
 builder.Services.AddAuthorization();
 
- 
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     opt =>
     {

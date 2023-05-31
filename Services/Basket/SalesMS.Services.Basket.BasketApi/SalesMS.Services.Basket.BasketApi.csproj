@@ -16,4 +16,8 @@
     <ProjectReference Include="..\..\..\Shared\SalesMS.Shared.SharedClass\SalesMS.Shared.SharedClass.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

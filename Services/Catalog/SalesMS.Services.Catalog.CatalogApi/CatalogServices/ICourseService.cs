@@ -1,7 +1,7 @@
 ﻿using SalesMS.Services.Catalog.CatalogApi.Dtos.Course;
 using SalesMS.Shared.SharedClass.Dtos;
 
-namespace SalesMS.Services.Catalog.CatalogApi.Services
+namespace SalesMS.Services.Catalog.CatalogApi.CatalogServices
 {
     public interface ICourseService
     {
