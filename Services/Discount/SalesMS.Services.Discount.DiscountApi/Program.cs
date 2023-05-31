@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using SalesMS.Services.Discount.DiscountApi.DiscountServices;
 using SalesMS.Shared.SharedClass.UserService;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -11,6 +12,8 @@ JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<ISharedIdendityService, SharedIdendityService>();
+
+builder.Services.AddScoped<IDiscountService, DiscountService>();
 
 var authPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 
