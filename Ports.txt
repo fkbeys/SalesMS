@@ -2,3 +2,4 @@
  AuthApi       => 5001
  CatalogApi    => 5011
  PhotoStockApi => 5012
+ BasketApi     => 5013
