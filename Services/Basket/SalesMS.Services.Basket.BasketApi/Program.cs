@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using SalesMS.Services.Basket.BasketApi.BasketServices;
 using SalesMS.Services.Basket.BasketApi.StartUpExtentions;
 using SalesMS.Shared.SharedClass.UserService;
+using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddHttpContextAccessor();
 
 
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 builder.Services.AddScoped<ISharedIdendityService, SharedIdendityService>();
 
 var authPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
