@@ -15,15 +15,22 @@ namespace SalesMS.Shared.SharedClass.UserService
         {
             //var userClaim = httpContextAccessor?.HttpContext?.User.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub);
 
-            var user = httpContextAccessor?.HttpContext?.User?.FindFirst("sub")?.Value;
-            if (user == null)
+            try
             {
-                var subFinder = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
-                user = httpContextAccessor?.HttpContext?.User?.FindFirst(subFinder)?.Value;
+                var user = httpContextAccessor?.HttpContext?.User?.FindFirst("sub")?.Value;
+                if (user == null)
+                {
+                    var subFinder = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
+                    user = httpContextAccessor?.HttpContext?.User?.FindFirst(subFinder)?.Value;
+                }
+
+
+                return user ?? "";
             }
-
-
-            return user;
+            catch (Exception)
+            {
+                return "";
+            }
         }
 
         // public string? GetUserId => httpContextAccessor?.HttpContext?.User?.FindFirst("sub")?.Value;

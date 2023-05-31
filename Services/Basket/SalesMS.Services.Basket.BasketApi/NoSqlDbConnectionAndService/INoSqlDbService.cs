@@ -1,5 +1,4 @@
-﻿using SalesMS.Services.Basket.BasketApi.NoSqlDb;
-using StackExchange.Redis;
+﻿using StackExchange.Redis;
 
 namespace SalesMS.Services.Basket.BasketApi.NoSqlDbService
 {

@@ -30,6 +30,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{7408B5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Basket.BasketApi", "Services\Basket\SalesMS.Services.Basket.BasketApi\SalesMS.Services.Basket.BasketApi.csproj", "{97DB9764-0DF6-434B-9A04-3A3B35872E6D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{960795C2-67D1-4F3C-B1D6-728C4B0AB261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Discount.DiscountApi", "Services\Discount\SalesMS.Services.Discount.DiscountApi\SalesMS.Services.Discount.DiscountApi.csproj", "{9C001ADB-151D-4B39-BEF1-DCEFDC921350}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,10 @@ Global
 		{97DB9764-0DF6-434B-9A04-3A3B35872E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97DB9764-0DF6-434B-9A04-3A3B35872E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97DB9764-0DF6-434B-9A04-3A3B35872E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C001ADB-151D-4B39-BEF1-DCEFDC921350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C001ADB-151D-4B39-BEF1-DCEFDC921350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C001ADB-151D-4B39-BEF1-DCEFDC921350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C001ADB-151D-4B39-BEF1-DCEFDC921350}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +77,8 @@ Global
 		{E3631AF0-320C-4B09-B1B2-743E683752BC} = {26A33424-755F-40CA-AFBD-9DFA806C0E3B}
 		{7408B58A-FFBE-4404-ACD9-9EC98E56CF5A} = {6FC76194-FAC5-43B8-B310-A0BDE2FA0B10}
 		{97DB9764-0DF6-434B-9A04-3A3B35872E6D} = {7408B58A-FFBE-4404-ACD9-9EC98E56CF5A}
+		{960795C2-67D1-4F3C-B1D6-728C4B0AB261} = {6FC76194-FAC5-43B8-B310-A0BDE2FA0B10}
+		{9C001ADB-151D-4B39-BEF1-DCEFDC921350} = {960795C2-67D1-4F3C-B1D6-728C4B0AB261}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {311791B1-03BD-423B-84C7-6CBA73B69322}

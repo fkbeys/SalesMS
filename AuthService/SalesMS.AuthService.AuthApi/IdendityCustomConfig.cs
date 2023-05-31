@@ -14,12 +14,16 @@ namespace SalesMS.AuthService.AuthApi
         public static string resource_catalog = "resource_catalog";
         public static string resource_photo_stock = "resource_photo_stock";
         public static string resource_basket = "resource_basket";
+        public static string resource_discount = "resource_discount";
 
         public static string resource_IdentityServerApi = "resource_IdentityServerApi";
 
         public static string catalog_fullpermition = "catalog_fullpermition";
         public static string photo_stock_fullpermition = "photo_stock_fullpermition";
-        public static string basket_fullpermition = "basket_fullpermition"; 
+        public static string basket_fullpermition = "basket_fullpermition";
+        public static string discount_fullpermition = "discount_fullpermition";
+
+
         public static string IdentityServerApi = IdentityServerConstants.LocalApi.ScopeName;
 
 
@@ -32,6 +36,7 @@ namespace SalesMS.AuthService.AuthApi
             new ApiResource(resource_catalog){Scopes={ catalog_fullpermition }},
             new ApiResource(resource_photo_stock){Scopes={ photo_stock_fullpermition }},
             new ApiResource(resource_basket){Scopes={ basket_fullpermition }},
+            new ApiResource(resource_discount){Scopes={ discount_fullpermition }},
             new ApiResource(resource_IdentityServerApi){Scopes={ IdentityServerApi }},
           
             //new ApiResource(IdentityServerConstants.LocalApi.ScopeName),
@@ -53,6 +58,7 @@ namespace SalesMS.AuthService.AuthApi
                 new ApiScope(catalog_fullpermition,"Full access for Catalog api"),
                 new ApiScope(photo_stock_fullpermition,"Full access for Photo Stock api"),
                 new ApiScope(basket_fullpermition,"Full access for Basket api"),
+                new ApiScope(discount_fullpermition,"Full access for Discount api"),
             };
 
         public static IEnumerable<Client> Clients =>
@@ -73,7 +79,7 @@ namespace SalesMS.AuthService.AuthApi
                     ClientSecrets={ new Secret("secret".Sha256() ) },
                     AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
                     AllowedScopes={ IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.Address, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,
-                         IdentityServerConstants.StandardScopes.OfflineAccess,IdentityServerApi,basket_fullpermition
+                         IdentityServerConstants.StandardScopes.OfflineAccess,IdentityServerApi,basket_fullpermition,discount_fullpermition
                      },
                     AccessTokenLifetime=3600,  //3600 seconds=1 hour
                     AllowOfflineAccess=true, // it opens the refresh token
