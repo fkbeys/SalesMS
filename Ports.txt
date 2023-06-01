@@ -4,3 +4,4 @@
  PhotoStockApi => 5012
  BasketApi     => 5013
  DiscountApi   => 5014
+ OrderApi      => 5015
