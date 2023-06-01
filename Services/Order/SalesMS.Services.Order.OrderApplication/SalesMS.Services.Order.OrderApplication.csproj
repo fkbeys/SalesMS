@@ -7,8 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\SalesMS.Shared.SharedClass\SalesMS.Shared.SharedClass.csproj" />
     <ProjectReference Include="..\SalesMs.Services.Order.OrderDomain\SalesMs.Services.Order.OrderDomain.csproj" />
     <ProjectReference Include="..\SalesMS.Services.Order.OrderInfrastructure\SalesMS.Services.Order.OrderInfrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MediatRHandlersAndCommands\Commands\" />
   </ItemGroup>
 
 </Project>
