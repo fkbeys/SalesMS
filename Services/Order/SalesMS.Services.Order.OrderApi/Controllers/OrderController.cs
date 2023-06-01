@@ -19,13 +19,6 @@ namespace SalesMS.Services.Order.OrderApi.Controllers
             this._sharedIdendityService = sharedIdendityService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> res(CancellationToken canToken)
-        {
-            string userid = _sharedIdendityService.GetUserId();
-            var result = await _mediator.Send(new GetOrdersByUserIdQuery { userId = userid }, canToken);
-            return ResponseResolver(result);
-        }
 
         [HttpGet]
         public async Task<IActionResult> GetOrders(CancellationToken canToken)

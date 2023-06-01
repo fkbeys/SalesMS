@@ -23,7 +23,7 @@ namespace SalesMS.Services.Order.OrderApplication.MediatRHandlersAndCommands.Han
         {
             try
             {
-                var first = await _orderDbContext.Orders.ToListAsync();
+
                 var orders = await _orderDbContext.Orders.Include(x => x.OrderItems).Where(f => f.buyerId == request.userId).ToListAsync();
                 var mappedOrders = _mapper.Map<List<OrderModelDto>>(orders);
 

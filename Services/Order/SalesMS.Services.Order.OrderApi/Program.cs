@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using SalesMS.Services.Order.OrderApplication.OrderMappingsAndRegisters;
 using SalesMS.Services.Order.OrderApplication.Registrations;
 using SalesMS.Services.Order.OrderInfrastructure.DbContexts;
@@ -25,10 +26,10 @@ builder.Services.ServiceRegistrationForMediatRForService();
 
 var authPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 
-//builder.Services.AddControllers(opt =>
-//{
-//    opt.Filters.Add(new AuthorizeFilter(authPolicy));
-//});
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add(new AuthorizeFilter(authPolicy));
+});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     opt =>
