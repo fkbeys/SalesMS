@@ -2,22 +2,25 @@
 using SalesMS.Services.Discount.DiscountApi.DiscountServices;
 using SalesMS.Services.Discount.DiscountApi.Models;
 using SalesMS.Shared.SharedClass.BaseClasses;
+using SalesMS.Shared.SharedClass.UserService;
 
 namespace SalesMS.Services.Discount.DiscountApi.Controllers
 {
     public class DiscountController : GenericBaseController
     {
         private readonly IDiscountService discountService;
+        private readonly ISharedIdendityService sharedIdendityService;
 
-        public DiscountController(IDiscountService discountService)
+        public DiscountController(IDiscountService discountService, ISharedIdendityService sharedIdendityService)
         {
             this.discountService = discountService;
+            this.sharedIdendityService = sharedIdendityService;
         }
 
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
-        {
+        { 
             var data = await discountService.GetAll();
             return ResponseResolver(data);
         }
@@ -25,7 +28,9 @@ namespace SalesMS.Services.Discount.DiscountApi.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] DiscountModel model)
-        {
+        { 
+            model.userid = sharedIdendityService.GetUserId();
+
             var data = await discountService.Save(model);
             return ResponseResolver(data);
         }
@@ -34,6 +39,7 @@ namespace SalesMS.Services.Discount.DiscountApi.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] DiscountModel model)
         {
+            model.userid = sharedIdendityService.GetUserId();
             var data = await discountService.Update(model);
             return ResponseResolver(data);
         }
