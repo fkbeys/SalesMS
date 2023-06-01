@@ -18,8 +18,4 @@
     <ProjectReference Include="..\SalesMS.Services.Order.OrderInfrastructure\SalesMS.Services.Order.OrderInfrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MediatRHandlersAndCommands\Commands\" />
-  </ItemGroup>
-
 </Project>

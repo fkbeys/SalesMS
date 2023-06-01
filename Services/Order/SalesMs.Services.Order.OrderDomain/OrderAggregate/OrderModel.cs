@@ -16,6 +16,10 @@ namespace SalesMs.Services.Order.OrderDomain.OrderAggregate
         private readonly List<OrderItem> _orderItems;
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
+        public OrderModel()
+        {
+            
+        }
 
         public OrderModel(string _buyerId, Address _adress)
         {

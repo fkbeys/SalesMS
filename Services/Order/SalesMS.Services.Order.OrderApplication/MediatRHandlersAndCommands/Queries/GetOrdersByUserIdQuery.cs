@@ -7,8 +7,5 @@ namespace SalesMS.Services.Order.OrderApplication.MediatRHandlersAndCommands.Que
     public class GetOrdersByUserIdQuery : IRequest<GenericResponse<List<OrderModelDto>>>
     {
         public string userId { get; set; }
-
-
-
     }
 }

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using SalesMS.Services.Order.OrderApplication.OrderMappingsAndRegisters;
+using SalesMS.Services.Order.OrderApplication.Registrations;
 using SalesMS.Services.Order.OrderInfrastructure.DbContexts;
 using SalesMS.Shared.SharedClass.UserService;
 using System.IdentityModel.Tokens.Jwt;
@@ -9,25 +9,26 @@ using System.IdentityModel.Tokens.Jwt;
 var builder = WebApplication.CreateBuilder(args);
 
 var conf = builder.Configuration;
+var sqlConnString = conf.GetConnectionString("SqlConnectionString");
+
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<ISharedIdendityService, SharedIdendityService>();
 
-
 builder.Services.OrderMappingRegistrationsForService();
-builder.Services.ServiceRegistrationForOrderDbContextSql(conf);
-
+builder.Services.ServiceRegistrationForOrderDbContextSql(sqlConnString);
+builder.Services.ServiceRegistrationForMediatRForService();
 
 
 
 var authPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 
-builder.Services.AddControllers(opt =>
-{
-    opt.Filters.Add(new AuthorizeFilter(authPolicy));
-});
+//builder.Services.AddControllers(opt =>
+//{
+//    opt.Filters.Add(new AuthorizeFilter(authPolicy));
+//});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     opt =>
