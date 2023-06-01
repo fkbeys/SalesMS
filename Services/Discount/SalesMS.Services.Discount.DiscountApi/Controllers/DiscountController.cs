@@ -20,7 +20,7 @@ namespace SalesMS.Services.Discount.DiscountApi.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
-        { 
+        {
             var data = await discountService.GetAll();
             return ResponseResolver(data);
         }
@@ -28,7 +28,7 @@ namespace SalesMS.Services.Discount.DiscountApi.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] DiscountModel model)
-        { 
+        {
             model.userid = sharedIdendityService.GetUserId();
 
             var data = await discountService.Save(model);

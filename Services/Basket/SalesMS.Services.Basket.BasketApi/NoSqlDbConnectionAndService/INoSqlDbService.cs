@@ -1,6 +1,6 @@
 ﻿using StackExchange.Redis;
 
-namespace SalesMS.Services.Basket.BasketApi.NoSqlDbService
+namespace SalesMS.Services.Basket.BasketApi.NoSqlDbConnectionAndService
 {
     public interface INoSqlDbService
     {

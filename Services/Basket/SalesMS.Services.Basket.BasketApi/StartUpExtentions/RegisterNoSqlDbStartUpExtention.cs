@@ -1,5 +1,5 @@
 ﻿using SalesMS.Services.Basket.BasketApi.NoSqlDb;
-using SalesMS.Services.Basket.BasketApi.NoSqlDbService;
+using SalesMS.Services.Basket.BasketApi.NoSqlDbConnectionAndService;
 
 namespace SalesMS.Services.Basket.BasketApi.StartUpExtentions
 {

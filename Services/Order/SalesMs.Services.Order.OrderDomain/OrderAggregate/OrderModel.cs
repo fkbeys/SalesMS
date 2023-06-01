@@ -2,7 +2,12 @@
 
 namespace SalesMs.Services.Order.OrderDomain.OrderAggregate
 {
-    public class Order : Entity, IAggregateRoot
+
+    // Owned types
+    // Shadow Property
+    // Backing Field
+
+    public class OrderModel : Entity, IAggregateRoot
     {
         public DateTime createDate { get; private set; }
         public Address adress { get; private set; }
@@ -12,7 +17,7 @@ namespace SalesMs.Services.Order.OrderDomain.OrderAggregate
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
 
-        public Order(string _buyerId, Address _adress)
+        public OrderModel(string _buyerId, Address _adress)
         {
             _orderItems = new List<OrderItem>();
             createDate = DateTime.UtcNow;

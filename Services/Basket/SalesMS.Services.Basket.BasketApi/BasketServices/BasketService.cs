@@ -1,6 +1,6 @@
 ﻿
 using SalesMS.Services.Basket.BasketApi.Dtos;
-using SalesMS.Services.Basket.BasketApi.NoSqlDbService;
+using SalesMS.Services.Basket.BasketApi.NoSqlDbConnectionAndService;
 using SalesMS.Shared.SharedClass.Dtos;
 using System.Text.Json;
 

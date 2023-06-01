@@ -1,7 +1,7 @@
 ﻿using SalesMS.Services.Basket.BasketApi.NoSqlDb;
 using StackExchange.Redis;
 
-namespace SalesMS.Services.Basket.BasketApi.NoSqlDbService
+namespace SalesMS.Services.Basket.BasketApi.NoSqlDbConnectionAndService
 {
     public class RedisService : INoSqlDbService
     {
@@ -10,7 +10,7 @@ namespace SalesMS.Services.Basket.BasketApi.NoSqlDbService
 
         public RedisService(INoSqlDbSettings noSqlDbSettings)
         {
-            this._noSqlDbSettings = noSqlDbSettings;
+            _noSqlDbSettings = noSqlDbSettings;
             GetDb(0);
         }
 
