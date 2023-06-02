@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using SalesMS.Shared.SharedClass.UserService;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -16,7 +17,7 @@ var authPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Bui
 
 builder.Services.AddControllers(opt =>
 {
-    // opt.Filters.Add(new AuthorizeFilter(authPolicy));
+      opt.Filters.Add(new AuthorizeFilter(authPolicy));
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
