@@ -48,7 +48,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.Order.Orde
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{8495217C-8013-4381-BE29-F0D9850D6F80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Payment.PaymentApi", "Services\Payment\SalesMS.Services.Payment.PaymentApi\SalesMS.Services.Payment.PaymentApi.csproj", "{CBBB2931-E583-4707-9F3C-4F1CDC330545}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.Payment.PaymentApi", "Services\Payment\SalesMS.Services.Payment.PaymentApi\SalesMS.Services.Payment.PaymentApi.csproj", "{CBBB2931-E583-4707-9F3C-4F1CDC330545}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{1912EC9D-4B43-4C3A-85A0-4CF158926DAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Gateways.MainGateway", "Gateways\SalesMS.Gateways.MainGateway\SalesMS.Gateways.MainGateway\SalesMS.Gateways.MainGateway.csproj", "{B0D219DB-D982-427A-B9F8-CEDD320A58B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +108,10 @@ Global
 		{CBBB2931-E583-4707-9F3C-4F1CDC330545}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBBB2931-E583-4707-9F3C-4F1CDC330545}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBBB2931-E583-4707-9F3C-4F1CDC330545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0D219DB-D982-427A-B9F8-CEDD320A58B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D219DB-D982-427A-B9F8-CEDD320A58B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D219DB-D982-427A-B9F8-CEDD320A58B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D219DB-D982-427A-B9F8-CEDD320A58B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +135,7 @@ Global
 		{B6D430EA-074D-4BE3-9EB4-C701611FA76F} = {F094FED6-A79C-4C10-9C75-FAECD1F6974B}
 		{8495217C-8013-4381-BE29-F0D9850D6F80} = {6FC76194-FAC5-43B8-B310-A0BDE2FA0B10}
 		{CBBB2931-E583-4707-9F3C-4F1CDC330545} = {8495217C-8013-4381-BE29-F0D9850D6F80}
+		{B0D219DB-D982-427A-B9F8-CEDD320A58B9} = {1912EC9D-4B43-4C3A-85A0-4CF158926DAB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {311791B1-03BD-423B-84C7-6CBA73B69322}

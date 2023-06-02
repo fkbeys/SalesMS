@@ -5,9 +5,9 @@ using SalesMS.Shared.SharedClass.Dtos;
 namespace SalesMS.Services.Payment.PaymentApi.Controllers
 {
 
-    public class ValuesController : GenericBaseController
+    public class PaymentController : GenericBaseController
     {
-        public ValuesController()
+        public PaymentController()
         {
 
         }
