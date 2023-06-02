@@ -67,6 +67,7 @@ namespace SalesMS.AuthService.AuthApi
                 new ApiScope(basket_fullpermition,"Full access for Basket api"),
                 new ApiScope(discount_fullpermition,"Full access for Discount api"),
                 new ApiScope(order_fullpermition,"Full access for Order api"),
+                new ApiScope(payment_fullpermition,"Full access for Payment api"),
             };
 
         public static IEnumerable<Client> Clients =>
@@ -74,7 +75,7 @@ namespace SalesMS.AuthService.AuthApi
             {
 
                 new Client{
-                    ClientName="Asp.Net Core MVC",
+                    ClientName="Asp.Net Core JWT for Trusted Apps",
                     ClientId=clientId,
                     ClientSecrets={ new Secret("secret".Sha256() ) },
                     AllowedGrantTypes=GrantTypes.ClientCredentials,
@@ -83,7 +84,7 @@ namespace SalesMS.AuthService.AuthApi
                 },
 
                  new Client{
-                    ClientName="Asp.Net Core MVC",
+                    ClientName="Asp.Net Core JWT For Users",
                     ClientId=userClientId,
                     ClientSecrets={ new Secret("secret".Sha256() ) },
                     AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
