@@ -16,6 +16,7 @@ namespace SalesMS.AuthService.AuthApi
         public static string resource_basket = "resource_basket";
         public static string resource_discount = "resource_discount";
         public static string resource_order = "resource_order";
+        public static string resource_payment = "resource_payment";
 
         public static string resource_IdentityServerApi = "resource_IdentityServerApi";
 
@@ -24,6 +25,7 @@ namespace SalesMS.AuthService.AuthApi
         public static string basket_fullpermition = "basket_fullpermition";
         public static string discount_fullpermition = "discount_fullpermition";
         public static string order_fullpermition = "order_fullpermition";
+        public static string payment_fullpermition = "payment_fullpermition";
 
 
         public static string IdentityServerApi = IdentityServerConstants.LocalApi.ScopeName;
@@ -40,8 +42,7 @@ namespace SalesMS.AuthService.AuthApi
             new ApiResource(resource_basket){Scopes={ basket_fullpermition }},
             new ApiResource(resource_discount){Scopes={ discount_fullpermition }},
             new ApiResource(resource_order){Scopes={ order_fullpermition }},
-
-
+            new ApiResource(resource_payment){Scopes={ payment_fullpermition }},
 
             new ApiResource(resource_IdentityServerApi){Scopes={ IdentityServerApi }},
           
@@ -88,7 +89,7 @@ namespace SalesMS.AuthService.AuthApi
                     AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
                     AllowedScopes={ IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.Address, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,
                          IdentityServerConstants.StandardScopes.OfflineAccess,
-                         IdentityServerApi,basket_fullpermition,discount_fullpermition,order_fullpermition
+                         IdentityServerApi,basket_fullpermition,discount_fullpermition,order_fullpermition,payment_fullpermition
                      },
                     AccessTokenLifetime=3600,  //3600 seconds=1 hour
                     AllowOfflineAccess=true, // it opens the refresh token

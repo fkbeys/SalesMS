@@ -24,27 +24,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.AuthService.AuthApi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{26A33424-755F-40CA-AFBD-9DFA806C0E3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.PhotoStock.PhotoStockApi", "Services\PhotoStock\SalesMS.Services.PhotoStock.PhotoStockApi\SalesMS.Services.PhotoStock.PhotoStockApi.csproj", "{E3631AF0-320C-4B09-B1B2-743E683752BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.PhotoStock.PhotoStockApi", "Services\PhotoStock\SalesMS.Services.PhotoStock.PhotoStockApi\SalesMS.Services.PhotoStock.PhotoStockApi.csproj", "{E3631AF0-320C-4B09-B1B2-743E683752BC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{7408B58A-FFBE-4404-ACD9-9EC98E56CF5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Basket.BasketApi", "Services\Basket\SalesMS.Services.Basket.BasketApi\SalesMS.Services.Basket.BasketApi.csproj", "{97DB9764-0DF6-434B-9A04-3A3B35872E6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.Basket.BasketApi", "Services\Basket\SalesMS.Services.Basket.BasketApi\SalesMS.Services.Basket.BasketApi.csproj", "{97DB9764-0DF6-434B-9A04-3A3B35872E6D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{960795C2-67D1-4F3C-B1D6-728C4B0AB261}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Discount.DiscountApi", "Services\Discount\SalesMS.Services.Discount.DiscountApi\SalesMS.Services.Discount.DiscountApi.csproj", "{9C001ADB-151D-4B39-BEF1-DCEFDC921350}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.Discount.DiscountApi", "Services\Discount\SalesMS.Services.Discount.DiscountApi\SalesMS.Services.Discount.DiscountApi.csproj", "{9C001ADB-151D-4B39-BEF1-DCEFDC921350}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{F094FED6-A79C-4C10-9C75-FAECD1F6974B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Order.OrderApi", "Services\Order\SalesMS.Services.Order.OrderApi\SalesMS.Services.Order.OrderApi.csproj", "{192468A1-0579-40FA-9CEB-1BB65E05EE80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.Order.OrderApi", "Services\Order\SalesMS.Services.Order.OrderApi\SalesMS.Services.Order.OrderApi.csproj", "{192468A1-0579-40FA-9CEB-1BB65E05EE80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Order.OrderApplication", "Services\Order\SalesMS.Services.Order.OrderApplication\SalesMS.Services.Order.OrderApplication.csproj", "{95BFE103-6E61-43B9-8B54-51A23AD11A9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.Order.OrderApplication", "Services\Order\SalesMS.Services.Order.OrderApplication\SalesMS.Services.Order.OrderApplication.csproj", "{95BFE103-6E61-43B9-8B54-51A23AD11A9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMs.Services.Order.OrderDomain", "Services\Order\SalesMs.Services.Order.OrderDomain\SalesMs.Services.Order.OrderDomain.csproj", "{75599C28-B32F-47F6-B4BF-205CFE6B6B23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMs.Services.Order.OrderDomain", "Services\Order\SalesMs.Services.Order.OrderDomain\SalesMs.Services.Order.OrderDomain.csproj", "{75599C28-B32F-47F6-B4BF-205CFE6B6B23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Order.OrderCore", "Services\Order\SalesMS.Services.Order.OrderCore\SalesMS.Services.Order.OrderCore.csproj", "{57022F39-F169-4F2F-8F9F-D4AD31F9228E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.Order.OrderCore", "Services\Order\SalesMS.Services.Order.OrderCore\SalesMS.Services.Order.OrderCore.csproj", "{57022F39-F169-4F2F-8F9F-D4AD31F9228E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Order.OrderInfrastructure", "Services\Order\SalesMS.Services.Order.OrderInfrastructure\SalesMS.Services.Order.OrderInfrastructure.csproj", "{B6D430EA-074D-4BE3-9EB4-C701611FA76F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Services.Order.OrderInfrastructure", "Services\Order\SalesMS.Services.Order.OrderInfrastructure\SalesMS.Services.Order.OrderInfrastructure.csproj", "{B6D430EA-074D-4BE3-9EB4-C701611FA76F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{8495217C-8013-4381-BE29-F0D9850D6F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Services.Payment.PaymentApi", "Services\Payment\SalesMS.Services.Payment.PaymentApi\SalesMS.Services.Payment.PaymentApi.csproj", "{CBBB2931-E583-4707-9F3C-4F1CDC330545}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +100,10 @@ Global
 		{B6D430EA-074D-4BE3-9EB4-C701611FA76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6D430EA-074D-4BE3-9EB4-C701611FA76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6D430EA-074D-4BE3-9EB4-C701611FA76F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBBB2931-E583-4707-9F3C-4F1CDC330545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBB2931-E583-4707-9F3C-4F1CDC330545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBB2931-E583-4707-9F3C-4F1CDC330545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBB2931-E583-4707-9F3C-4F1CDC330545}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,8 @@ Global
 		{75599C28-B32F-47F6-B4BF-205CFE6B6B23} = {F094FED6-A79C-4C10-9C75-FAECD1F6974B}
 		{57022F39-F169-4F2F-8F9F-D4AD31F9228E} = {F094FED6-A79C-4C10-9C75-FAECD1F6974B}
 		{B6D430EA-074D-4BE3-9EB4-C701611FA76F} = {F094FED6-A79C-4C10-9C75-FAECD1F6974B}
+		{8495217C-8013-4381-BE29-F0D9850D6F80} = {6FC76194-FAC5-43B8-B310-A0BDE2FA0B10}
+		{CBBB2931-E583-4707-9F3C-4F1CDC330545} = {8495217C-8013-4381-BE29-F0D9850D6F80}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {311791B1-03BD-423B-84C7-6CBA73B69322}
