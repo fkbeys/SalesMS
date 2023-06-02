@@ -36,7 +36,7 @@ namespace SalesMS.Services.Order.OrderInfrastructure.DbContexts
             modelBuilder.Entity<OrderModel>().OwnsOne(o => o.adress).WithOwner();
 
 
-          
+
         }
 
     }

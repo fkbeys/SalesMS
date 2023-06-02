@@ -18,7 +18,7 @@ namespace SalesMs.Services.Order.OrderDomain.OrderAggregate
 
         public OrderModel()
         {
-            
+
         }
 
         public OrderModel(string _buyerId, Address _adress)
