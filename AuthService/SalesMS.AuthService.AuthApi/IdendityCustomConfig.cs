@@ -58,7 +58,7 @@ namespace SalesMS.AuthService.AuthApi
                 new IdentityResources.Email(),
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
-                new IdentityResource(){Name="roles",DisplayName="Roles",Description="User Roles",UserClaims=new []{"role"}}
+                new IdentityResource(){Name="roles",DisplayName="Roles",Description="User Roles",UserClaims=new []{"role" }}
                    };
 
         public static IEnumerable<ApiScope> ApiScopes =>
