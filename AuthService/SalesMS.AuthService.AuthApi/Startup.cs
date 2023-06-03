@@ -29,6 +29,18 @@ namespace SalesMS.AuthService.AuthApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //Cors implementation allow any
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                    });
+            });
+
             services.AddLocalApiAuthentication();
             services.AddControllersWithViews();
 
@@ -91,6 +103,7 @@ namespace SalesMS.AuthService.AuthApi
             }
 
             app.UseStaticFiles();
+            app.UseCors();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

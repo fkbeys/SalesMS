@@ -1,0 +1,42 @@
+import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LoginPage from './Pages/LoginPage';
+
+import MissingPage from './Pages/MissingPage';
+import DashboardPage from './Pages/DashboardPage';
+import { ThemeProvider } from '@emotion/react';
+import { useAppSelector } from './app/hooks';
+import { RequireAuth } from 'react-auth-kit';
+import LayoutPage from './Pages/LayoutPage';
+import darkTheme from './Components/CssFolder/DarkThemeCss';
+import lightTheme from './Components/CssFolder/LightTheme';
+import AuthController from './Authorization/AuthController';
+import CatalogPage from './Pages/CatalogPage';
+
+function App() {
+
+  const ThemeSlice = useAppSelector(state => state.ThemeSlice);
+  function themeSelector() {
+    return ThemeSlice.currentTheme === "dark" ? darkTheme : lightTheme;
+  }
+
+
+
+  return (
+
+    <ThemeProvider theme={themeSelector}>
+      <BrowserRouter>
+        <Routes>
+          <Route path={'/'} element={<CatalogPage />} />
+          <Route path={'/CatalogPage'} element={<CatalogPage />} />
+          <Route path='/LoginPage' element={<LoginPage />} />
+          <Route path='/DashboardPage' element={<AuthController component={<DashboardPage />} />} />
+          <Route path='/BasketPage' element={<AuthController component={<DashboardPage />} />} />
+          <Route path='*' element={<RequireAuth loginPath='/' children={<LayoutPage children={<MissingPage />} />} />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider >
+  );
+}
+
+export default App;

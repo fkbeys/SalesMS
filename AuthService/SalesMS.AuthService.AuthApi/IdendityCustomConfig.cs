@@ -58,7 +58,7 @@ namespace SalesMS.AuthService.AuthApi
                 new IdentityResources.Email(),
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
-                new IdentityResource(){Name="roles",DisplayName="Roles",Description="User Roles",UserClaims=new []{"role" }}
+                new IdentityResource(){Name="roles",DisplayName="roles",Description="User Roles",UserClaims=new []{"roles" }}
                    };
 
         public static IEnumerable<ApiScope> ApiScopes =>
@@ -87,19 +87,22 @@ namespace SalesMS.AuthService.AuthApi
                     AllowOfflineAccess=true,
                 },
 
+
                  new Client{
                     ClientName="Asp.Net Core JWT For Users",
                     ClientId=userClientId,
                     ClientSecrets={ new Secret("secret".Sha256() ) },
                     AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
                     AllowedScopes={ IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.Address, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,
+                         IdentityServerConstants.StandardScopes.Phone, IdentityServerConstants.LocalApi.ScopeName,"roles",
                          IdentityServerConstants.StandardScopes.OfflineAccess,
                          IdentityServerApi,basket_fullpermition,discount_fullpermition
                          ,order_fullpermition,payment_fullpermition,gateway_fullpermition
                      },
-                    AccessTokenLifetime=3600,  //3600 seconds=1 hour
+                    AccessTokenLifetime=3,  //3600 seconds=1 hour
                     AllowOfflineAccess=true, // it opens the refresh token
-                    AbsoluteRefreshTokenLifetime=(int)(DateTime.Now.AddDays(60)-DateTime.Now).TotalSeconds, //refresh token expiration in seconds (60 days )
+                    //AbsoluteRefreshTokenLifetime=(int)(DateTime.Now.AddDays(60)-DateTime.Now).TotalSeconds, //refresh token expiration in seconds (60 days )
+                    AbsoluteRefreshTokenLifetime=3,
                     RefreshTokenExpiration=TokenExpiration.Absolute,  // after the 60 days, the refresh token has to be experid
                     RefreshTokenUsage=TokenUsage.ReUse, // if the life time of the refresh token expires, it will be useless
                 },
