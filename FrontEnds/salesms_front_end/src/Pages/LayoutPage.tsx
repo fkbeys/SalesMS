@@ -226,7 +226,7 @@ const LayoutPage = ({ children }: { children: ReactNode }) => {
       }}
       role="presentation"
     >
-      {/* ************************************************************* Əməliyyatlar ********************************************************************************* */}
+      {/* ************************************************************* MainMenu operations ********************************************************************************* */}
       <List
         sx={{ width: "100%", maxWidth: { drawerWidth } }}
         component="nav"
@@ -240,149 +240,74 @@ const LayoutPage = ({ children }: { children: ReactNode }) => {
       >
         <ListItemButton sx={HeaderStyle} onClick={() => karlarHandle()}>
           <ListItemIcon style={ikonStyle}>
-            {" "}
-            <ViewAgenda />{" "}
-          </ListItemIcon>{" "}
-          <ListItemText primary="Əməliyyatlar" />
+
+            <ViewAgenda />
+          </ListItemIcon>
+          <ListItemText primary="Menu" />
           {kartlarMainMenu ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
 
         <Collapse in={kartlarMainMenu} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
+
             <List component="div" disablePadding>
-              {" "}
+
               <ListItemButton
                 sx={selectedIndex === 1 ? selectedItemStyle : itemStyle}
                 onClick={() => {
-                  navigate("/PaketAxtarisUI");
+                  navigate("/CatalogPage");
                   handleSelect(1);
                 }}
               >
                 <ListItemIcon style={ikonStyle}>
-                  {" "}
-                  <Adjust />{" "}
-                </ListItemIcon>{" "}
-                <ListItemText primary="Paket Axtar" />{" "}
+
+                  <Adjust />
+                </ListItemIcon>
+                <ListItemText primary="Catalog" />
               </ListItemButton>
             </List>
 
             <List component="div" disablePadding>
-              {" "}
-              <ListItemButton
-                sx={selectedIndex === 2 ? selectedItemStyle : itemStyle}
+
+              <ListItemButton sx={selectedIndex === 2 ? selectedItemStyle : itemStyle}
                 onClick={() => {
-                  navigate("/BekleyenPaketlerPage");
+                  navigate("/BasketPage");
                   handleSelect(2);
                 }}
               >
                 <ListItemIcon style={ikonStyle}>
-                  {" "}
-                  <Adjust />{" "}
-                </ListItemIcon>{" "}
-                <ListItemText primary="Gözləyən Paketlər" />{" "}
+
+                  <Adjust />
+                </ListItemIcon>
+                <ListItemText primary="Basket" />
               </ListItemButton>
             </List>
+
+
             <List component="div" disablePadding>
-              {" "}
+
               <ListItemButton
                 sx={selectedIndex === 3 ? selectedItemStyle : itemStyle}
                 onClick={() => {
-                  navigate("/TeslimEdilmisPaketlerPage");
+                  navigate("/OrderPage");
                   handleSelect(3);
                 }}
               >
                 <ListItemIcon style={ikonStyle}>
-                  {" "}
-                  <Adjust />{" "}
-                </ListItemIcon>{" "}
-                <ListItemText primary="Təhvil Verilmiş Paketlər " />{" "}
+
+                  <Adjust />
+                </ListItemIcon>
+                <ListItemText primary="Orders " />
               </ListItemButton>
             </List>
+
+
+
           </List>
         </Collapse>
       </List>
 
-      {/* ********************************************************************** İDAREETME ************************************************************************ */}
 
-      {user.length > 0 ? (
-        <List
-          sx={{ width: "100%", maxWidth: { drawerWidth } }}
-          component="nav"
-          aria-labelledby="nested-list-subheader"
-          subheader={
-            <ListSubheader
-              component="div"
-              id="nested-list-subheader"
-            ></ListSubheader>
-          }
-        >
-          <ListItemButton sx={HeaderStyle} onClick={() => idareEtHandle()}>
-            <ListItemIcon style={ikonStyle}>
-              {" "}
-              <SettingsApplications />{" "}
-            </ListItemIcon>{" "}
-            <ListItemText primary="İdarəetmə" />
-            {idareEtMainMenu ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-
-          <Collapse in={idareEtMainMenu} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <List component="div" disablePadding>
-                {" "}
-                <ListItemButton
-                  sx={selectedIndex === 21 ? selectedItemStyle : itemStyle}
-                  onClick={() => {
-                    navigate("/DepartmanlarPage");
-                    handleSelect(21);
-                  }}
-                >
-                  <ListItemIcon style={ikonStyle}>
-                    {" "}
-                    <Adjust />{" "}
-                  </ListItemIcon>{" "}
-                  <ListItemText primary="Departamentlər" />{" "}
-                </ListItemButton>
-              </List>
-
-              <List component="div" disablePadding>
-                {" "}
-                <ListItemButton
-                  sx={selectedIndex === 22 ? selectedItemStyle : itemStyle}
-                  onClick={() => {
-                    navigate("/KullanicilarPage");
-                    handleSelect(22);
-                  }}
-                >
-                  <ListItemIcon style={ikonStyle}>
-                    {" "}
-                    <Adjust />{" "}
-                  </ListItemIcon>{" "}
-                  <ListItemText primary="İstifadəçilər" />{" "}
-                </ListItemButton>
-              </List>
-
-              <List component="div" disablePadding>
-                {" "}
-                <ListItemButton
-                  sx={selectedIndex === 23 ? selectedItemStyle : itemStyle}
-                  onClick={() => {
-                    navigate("/YetkilerPage");
-                    handleSelect(23);
-                  }}
-                >
-                  <ListItemIcon style={ikonStyle}>
-                    {" "}
-                    <Adjust />{" "}
-                  </ListItemIcon>{" "}
-                  <ListItemText primary="Səlahiyyətlər" />{" "}
-                </ListItemButton>
-              </List>
-            </List>
-          </Collapse>
-        </List>
-      ) : (
-        <div></div>
-      )}
 
       {/* ********************************************************************************************************************************************** */}
     </Box>
@@ -433,7 +358,7 @@ const LayoutPage = ({ children }: { children: ReactNode }) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <img src={logo} alt="Logo" style={{ height: "60px" }} />
           </Typography>
-          {moment().format("yyyy-mm-dd")}
+          {moment().format("DD-MM-YYYY")}
 
           <AccountMenu />
 
@@ -449,8 +374,8 @@ const LayoutPage = ({ children }: { children: ReactNode }) => {
           </IconButton>
 
           <Typography variant="h6" component="div" pl={2}>
-            {" "}
-            {user}{" "}
+
+            {user}
           </Typography>
 
 
@@ -490,7 +415,7 @@ const LayoutPage = ({ children }: { children: ReactNode }) => {
                     src={headerLogo}
                     alt="Logo"
                     style={{ height: "110px" }}
-                  />{" "}
+                  />
                 </Button>
               </Typography>
             ) : (

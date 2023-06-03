@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Basketpage = () => {
+const BasketPage = () => {
     return (
         <div>Basketpage</div>
     )
 }
 
-export default Basketpage
+export default BasketPage

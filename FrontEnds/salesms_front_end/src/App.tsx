@@ -12,6 +12,11 @@ import darkTheme from './Components/CssFolder/DarkThemeCss';
 import lightTheme from './Components/CssFolder/LightTheme';
 import AuthController from './Authorization/AuthController';
 import CatalogPage from './Pages/CatalogPage';
+import UnAuthorizedPage from './Pages/UnAuthorizedPage';
+import ProductDetailPage from './Pages/ProductDetailPage';
+import PaymentPage from './Pages/PaymentPage';
+import OrderPage from './Pages/OrderPage';
+import BasketPage from './Pages/Basketpage';
 
 function App() {
 
@@ -31,7 +36,18 @@ function App() {
           <Route path={'/CatalogPage'} element={<CatalogPage />} />
           <Route path='/LoginPage' element={<LoginPage />} />
           <Route path='/DashboardPage' element={<AuthController component={<DashboardPage />} />} />
-          <Route path='/BasketPage' element={<AuthController component={<DashboardPage />} />} />
+
+          <Route path='/BasketPage' element={<AuthController component={<BasketPage />} />} />
+          <Route path='/OrderPage' element={<AuthController component={<OrderPage />} />} />
+          <Route path='/PaymentPage' element={<AuthController component={<PaymentPage />} />} />
+          <Route path='/ProductDetailPage' element={<AuthController component={<ProductDetailPage />} />} />
+          <Route path='/UnAuthorizedPage' element={<AuthController component={<UnAuthorizedPage />} />} />
+
+
+
+
+
+
           <Route path='*' element={<RequireAuth loginPath='/' children={<LayoutPage children={<MissingPage />} />} />} />
         </Routes>
       </BrowserRouter>
