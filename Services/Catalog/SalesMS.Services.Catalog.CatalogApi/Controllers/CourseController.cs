@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SalesMS.Services.Catalog.CatalogApi.CatalogServices;
 using SalesMS.Services.Catalog.CatalogApi.Dtos.Course;
 using SalesMS.Shared.SharedClass.BaseClasses;
@@ -18,42 +19,43 @@ namespace SalesMS.Services.Catalog.CatalogApi.Controllers
         public async Task<IActionResult> GetAll()
         {
             var data = await _courseService.GetAllAsync();
-            return ResponseResolver(data as dynamic);
+            return ResponseResolver(data);
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CourseCreateDto courseDto)
         {
             var data = await _courseService.CreateAsync(courseDto);
-            return ResponseResolver(data as dynamic);
+            return ResponseResolver(data);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> FindByIdAsync(string id)
         {
             var data = await _courseService.FindByIdAsync(id);
-            return ResponseResolver(data as dynamic);
+            return ResponseResolver(data);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> GetAllByUserIdAsync(string id)
+        [Authorize]
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetAllByUserIdAsync(string userId)
         {
-            var data = await _courseService.GetAllByUserIdAsync(id);
-            return ResponseResolver(data as dynamic);
+            var data = await _courseService.GetAllByUserIdAsync(userId);
+            return ResponseResolver(data);
         }
-
+        [Authorize]
         [HttpPut]
         public async Task<IActionResult> UpdateAsync([FromBody] CourseDto courseDto)
         {
             var data = await _courseService.UpdateAsync(courseDto);
-            return ResponseResolver(data as dynamic);
+            return ResponseResolver(data);
         }
-
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var data = await _courseService.DeleteAsync(id);
-            return ResponseResolver(data as dynamic);
+            return ResponseResolver(data);
         }
 
 

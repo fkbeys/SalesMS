@@ -97,7 +97,7 @@ namespace SalesMS.AuthService.AuthApi
                          IdentityServerConstants.StandardScopes.Phone, IdentityServerConstants.LocalApi.ScopeName,"roles",
                          IdentityServerConstants.StandardScopes.OfflineAccess,
                          IdentityServerApi,basket_fullpermition,discount_fullpermition
-                         ,order_fullpermition,payment_fullpermition,gateway_fullpermition
+                         ,order_fullpermition,payment_fullpermition, catalog_fullpermition, photo_stock_fullpermition, IdentityServerApi,gateway_fullpermition
                      },
                     AccessTokenLifetime=3600,  //3600 seconds=1 hour
                     AllowOfflineAccess=true, // it opens the refresh token

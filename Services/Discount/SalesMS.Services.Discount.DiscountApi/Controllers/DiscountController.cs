@@ -61,7 +61,7 @@ namespace SalesMS.Services.Discount.DiscountApi.Controllers
         }
 
         [HttpGet("{code}/{userId}")]
-        public async Task<IActionResult> GetById(string code, string userId)
+        public async Task<IActionResult> GetByCodeAndUserId(string code, string userId)
         {
             var data = await discountService.GetByCodeAndUserId(code, userId);
             return ResponseResolver(data);

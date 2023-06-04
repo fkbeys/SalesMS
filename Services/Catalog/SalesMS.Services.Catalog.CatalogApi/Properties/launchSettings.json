@@ -7,18 +7,14 @@
       "applicationUrl": "http://localhost:5011",
       "sslPort": 0
     }
-  },
-
-
-
-
+  },   
   "profiles": {
     "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5005",
+      "applicationUrl": "http://localhost:5011",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

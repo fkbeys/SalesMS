@@ -7,9 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 var conf = builder.Configuration;
- JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
- builder.Services.AddHttpContextAccessor();
- 
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddControllers(opt =>
+{
+    // opt.Filters.Add(new AuthorizeFilter());
+
+});
+
 // Add configuration sources
 builder.Configuration
     .SetBasePath(builder.Environment.ContentRootPath)
@@ -27,7 +34,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         opt.RequireHttpsMetadata = false;
     }
     );
- 
+
 // Add services to the container
 builder.Services.AddOcelot(builder.Configuration);
 
@@ -38,7 +45,13 @@ app.UseAuthorization();
 app.UseAuthentication();
 
 // Configure middleware
-app.UseOcelot().Wait();
+
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.MapControllers();
 
 // Run the application
+app.UseOcelot().Wait();
 app.Run();
