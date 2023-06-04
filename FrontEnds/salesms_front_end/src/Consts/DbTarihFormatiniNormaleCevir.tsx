@@ -1,23 +1,19 @@
 import Moment from 'moment';
 import { StringToInt } from './StringToInt';
 
-export function DbTarihFormatiniNormaleCevir(tarih: string) {
+export function ConvertDbDateFormatToDayMonthYear(date: string) {
 
-    if (tarih === null) {
+    if (date === undefined) {
         return "";
     }
-
-    if (tarih === undefined) {
+    if (date === null) {
         return "";
     }
+    const year = date.substring(0, 4).replace('_', '').replace('-', '');
+    const month = date.substring(5, 7).replace('_', '').replace('-', '');
+    const day = date.substring(8, 10).replace('_', '').replace('-', '');
 
-    const yil = tarih.substring(0, 4).replace('_', '').replace('-', '');
-    const ay = tarih.substring(5, 7).replace('_', '').replace('-', '');
-    const gun = tarih.substring(8, 10).replace('_', '').replace('-', '');
-
-    // const month = StringToInt(ay);
-
-    const result = gun + "-" + ay + "-" + yil;
+    const result = day + "-" + month + "-" + year;
 
     return result;
 }

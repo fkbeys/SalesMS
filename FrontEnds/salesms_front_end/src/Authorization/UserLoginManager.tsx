@@ -34,24 +34,14 @@ const UserLoginManager = async (username: string, password: string) => {
         });
         resultFromApi = response.data as AccessTokenResponse;
 
-
         const userInfoRequest = await axios.get<GenericApiResultModel<UserModel>>(Url.GetUserUrl, {
             headers: { Authorization: "Bearer " + resultFromApi.access_token }
         });
 
-        // if (userInfoRequest?.status === 200) {
-        //     UserInfoManager.SaveUserToLocalStorage(userInfoRequest.data);
-        //     console.log(userInfoRequest.data.data);
-        // }
-
-        signIn({
-            token: resultFromApi.access_token,
-            expiresIn: 1,
-            tokenType: 'Bearer',
-            refreshToken: resultFromApi.refresh_token,
-            refreshTokenExpireIn: 1,
-            authState: [userInfoRequest.data.data]
-        });
+        if (userInfoRequest?.status === 200) {
+            UserInfoManager.SaveUserToLocalStorage(userInfoRequest.data);
+            console.log(userInfoRequest.data.data);
+        }
 
 
     } catch (error) {
@@ -64,8 +54,4 @@ const UserLoginManager = async (username: string, password: string) => {
 }
 
 export default UserLoginManager
-
-function signIn(arg0: { token: any; expiresIn: number; tokenType: string; refreshToken: any; refreshTokenExpireIn: number; authState: any[]; }) {
-    throw new Error('Function not implemented.');
-}
 

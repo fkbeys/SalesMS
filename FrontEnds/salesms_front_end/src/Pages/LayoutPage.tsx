@@ -37,6 +37,7 @@ import { temaDegis } from "../Slices/TemaSlice";
 import Url from "../Consts/Url";
 import moment from "moment";
 import AccountMenu from "../Components/UiComponents/AccountMenu";
+import UserInfoManager from "../Authorization/UserInfoManager";
 
 
 type Anchor = "top" | "left" | "bottom" | "right";
@@ -73,7 +74,7 @@ const LayoutPage = ({ children }: { children: ReactNode }) => {
 
   //--------------------------------------------------------------------------
 
-  const user = "userinfo";
+  const user = UserInfoManager.ReadUserFromLocalStorage();
   const drawerWidth = 319;
 
   React.useEffect(() => {
@@ -375,7 +376,7 @@ const LayoutPage = ({ children }: { children: ReactNode }) => {
 
           <Typography variant="h6" component="div" pl={2}>
 
-            {user}
+            {user?.userName}
           </Typography>
 
 
@@ -447,9 +448,9 @@ const LayoutPage = ({ children }: { children: ReactNode }) => {
         >
           <DrawerHeader sx={{ justifyContent: "center" }}>
             {open ? (
-              <Typography variant="h5">Aselsan</Typography>
+              <Typography variant="h5">Sales MS</Typography>
             ) : (
-              <Typography variant="h6">Aselsan</Typography>
+              <Typography variant="h6">Sales MS</Typography>
             )}
           </DrawerHeader>
           {list("left")}

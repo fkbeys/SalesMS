@@ -7,7 +7,7 @@ import { useTheme } from '@mui/material';
 
 
 const LanguageSelecterUI = () => {
-    const [selected, setSelected] = useState(localStorage.getItem("language") || 'az');
+    const [selected, setSelected] = useState(localStorage.getItem("language") || 'US');
 
     const theme = useTheme();
 
@@ -33,9 +33,9 @@ const LanguageSelecterUI = () => {
             <ReactFlagsSelect
                 selected={selected}
                 onSelect={changeLanguage}
-
-                countries={["AZ"]}
-                placeholder="Dil Seçimi"
+                countries={["US", "GB", "DE", "TR", "AZ"]}
+                customLabels={{ US: "EN-US", GB: "EN-GB", DE: "DE", TR: "TR", AZ: "AZ" }}
+                placeholder="Select Language"
             />
         </div>
     )

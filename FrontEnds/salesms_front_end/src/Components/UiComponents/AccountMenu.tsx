@@ -44,7 +44,6 @@ export default function AccountMenu() {
             aria-expanded={open ? "true" : undefined}
             color="inherit"
           >
-            {/* <Avatar sx={{ width: 32, height: 32 }}></Avatar> */}
             <AccountCircle sx={{ width: 32, height: 32 }} />
           </IconButton>
         </Tooltip>
@@ -84,18 +83,12 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        {/* <MenuItem>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider /> */}
+
         <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Çıxış
+          Sign Out
         </MenuItem>
       </Menu>
     </React.Fragment>

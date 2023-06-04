@@ -16,7 +16,7 @@ const DeleteUserToLocalStorage = () => {
 const ReadUserFromLocalStorage = () => {
     let result = {} as UserModel;
     try {
-        const obj = JSON.parse(localStorage.getItem("userInfo") || "") as GenericApiResultModel<UserModel>;
+        const obj = JSON.parse(localStorage.getItem("userInfo") || "") as UserModel;
         return obj;
     } catch (error) {
         console.log('Read user error');

@@ -30,7 +30,7 @@ const GenericBarcodePrint: React.FC<Model> = ({ barcode, height, width }) => {
     }
 `;
 
-  console.log("Print Boyutlari: Width:" + width + " Height:" + height);
+  // console.log("Print Boyutlari: Width:" + width + " Height:" + height);
 
   return (
     <div>
