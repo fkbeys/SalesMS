@@ -5,7 +5,6 @@ interface model {
     component: JSX.Element
 }
 
-
 const AuthController = (model: model) => {
     return (
         <RequireAuth loginPath={'/'}>

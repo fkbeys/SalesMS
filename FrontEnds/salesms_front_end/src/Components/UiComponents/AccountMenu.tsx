@@ -9,6 +9,7 @@ import Logout from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
 import { AccountCircle } from "@mui/icons-material";
 import { useSignOut } from "react-auth-kit";
+import UserInfoManager from "../../Authorization/UserInfoManager";
 
 
 export default function AccountMenu() {
@@ -26,9 +27,9 @@ export default function AccountMenu() {
 
   const handleLogout = () => {
     setAnchorEl(null);
-    navigate("/");
+    UserInfoManager.DeleteUserToLocalStorage();
     signout();
-    // localStorage.removeItem("userInfo");
+    navigate("/");
   };
   return (
     <React.Fragment>

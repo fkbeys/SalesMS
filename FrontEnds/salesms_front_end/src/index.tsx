@@ -10,7 +10,7 @@ import './i18n.js';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from 'react-auth-kit'
-import refreshApi from './Managers/RefreshTokenApiManager';
+import RefreshTokenApiManager from './Authorization/RefreshTokenApiManager';
 
 
 const container = document.getElementById('root')!;
@@ -20,7 +20,7 @@ root.render(
 
 
   <Provider store={store} >
-    <AuthProvider authType='cookie' authName="_auth_t" refresh={refreshApi} cookieSecure={false}   >
+    <AuthProvider authType='cookie' authName="_auth_t" refresh={RefreshTokenApiManager} cookieSecure={false}   >
       <Suspense fallback="Loading...">
         <Toaster />
         <App />

@@ -19,16 +19,16 @@ const callRefreshApi: refreshTokenCallback = async ({ authToken, refreshToken, a
     return {
         isSuccess: data.success,
         newAuthToken: data.newAuthToken,
-        newAuthTokenExpireIn: 0.1,
+        newAuthTokenExpireIn: 60,
         newRefreshToken: data.newRefreshToken,
-        newRefreshTokenExpiresIn: 0.1,
+        newRefreshTokenExpiresIn: 3600,
         newAuthUserState: data.newAuthUserState
     };
 }
 
-const refreshApi = createRefresh({
+const RefreshTokenApiManager = createRefresh({
     interval: 1,
     refreshApiCallback: callRefreshApi
 });
 
-export default refreshApi;
+export default RefreshTokenApiManager;

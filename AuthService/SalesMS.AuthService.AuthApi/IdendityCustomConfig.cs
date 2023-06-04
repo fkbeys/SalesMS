@@ -99,10 +99,9 @@ namespace SalesMS.AuthService.AuthApi
                          IdentityServerApi,basket_fullpermition,discount_fullpermition
                          ,order_fullpermition,payment_fullpermition,gateway_fullpermition
                      },
-                    AccessTokenLifetime=3,  //3600 seconds=1 hour
+                    AccessTokenLifetime=3600,  //3600 seconds=1 hour
                     AllowOfflineAccess=true, // it opens the refresh token
-                    //AbsoluteRefreshTokenLifetime=(int)(DateTime.Now.AddDays(60)-DateTime.Now).TotalSeconds, //refresh token expiration in seconds (60 days )
-                    AbsoluteRefreshTokenLifetime=3,
+                    AbsoluteRefreshTokenLifetime=(int)(DateTime.Now.AddDays(60)-DateTime.Now).TotalSeconds, //refresh token expiration in seconds (60 days ) 
                     RefreshTokenExpiration=TokenExpiration.Absolute,  // after the 60 days, the refresh token has to be experid
                     RefreshTokenUsage=TokenUsage.ReUse, // if the life time of the refresh token expires, it will be useless
                 },

@@ -11,8 +11,8 @@ import { temaDegis } from "../Slices/TemaSlice";
 import { useTranslation } from "react-i18next";
 import LanguageSelecterUI from "../Components/UiComponents/LanguageSelecterUI";
 import { AppDispatch } from "../app/store";
-import UserLoginPostMethod from "../TokenIslemleri/UserLoginPostMethod";
 import { useSignIn } from "react-auth-kit";
+import UserLoginManager from "../Authorization/UserLoginManager";
 
 const LoginContainer = styled(Container)({
     background: "primary",
@@ -66,7 +66,7 @@ const LoginPage: React.FC = () => {
 
         e.preventDefault();
         setIsLoading(true);
-        const result = await UserLoginPostMethod(username, password);
+        const result = await UserLoginManager(username, password);
         if (result?.access_token?.length > 0) {
             signIn({
                 token: result.access_token,
@@ -77,7 +77,7 @@ const LoginPage: React.FC = () => {
                 authState: [result.scope]
             });
 
-            toast.success("Logged in. Please be patient.");
+            toast.success("Logged in. You are redirecting...");
             await navigate("/DashboardPage");
         } else {
             toast.error("Username or Password incorrect!");

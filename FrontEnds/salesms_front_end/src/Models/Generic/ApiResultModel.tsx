@@ -1,11 +1,11 @@
-export interface ApiResultModelMultiple<T> {
-    data: T[]
+
+export interface GenericApiResultModel<T> {
+    data: T | T[]
     isSuccess: boolean
     message: string
 }
 
-export interface ApiResultModelSingle<T> {
-    data: T
-    isSuccess: boolean
-    message: string
+export interface GenericApiResultModelWithPagination<T> extends GenericApiResultModel<T> {
+    pageIndex: number;
+    itemsCount: number;
 }

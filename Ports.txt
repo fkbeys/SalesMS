@@ -1,5 +1,7 @@
 
+ Frontend      => 3000
  Gateway       => 5000 
+
  AuthApi       => 5001
 
  CatalogApi    => 5011 catalog_fullpermition

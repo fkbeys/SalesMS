@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { ApiResultModelSingle } from "../Models/Generic/ApiResultModel";
+import { GenericApiResultModel } from "../Models/Generic/ApiResultModel";
 import { YetkilerModel } from "../Models/YetkilerModel";
 
 interface YetkilerSliceModel {
@@ -11,7 +11,7 @@ interface YetkilerSliceModel {
 export const AsyncGetKullanicininAktifYetkileri = createAsyncThunk(
   "YetkilerSlice/AsyncGetKullanicininAktifYetkileri",
   async (int: number) => {
-    return {} as ApiResultModelSingle<YetkilerModel>;
+    return {} as GenericApiResultModel<YetkilerModel>;
   }
 );
 
@@ -31,7 +31,7 @@ const YetkilerSlice = createSlice({
         AsyncGetKullanicininAktifYetkileri.fulfilled,
         (state, action) => {
           state.isBusy = false;
-          const result = action.payload as ApiResultModelSingle<YetkilerModel>;
+          const result = action.payload as GenericApiResultModel<YetkilerModel>;
 
           if (result.isSuccess) {
 
