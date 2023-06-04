@@ -8,14 +8,14 @@
 // OrderApi      => 5015 order_fullpermition
 // PaymentApi    => 5016 payment_fullpermition
 
-const baseUrl = "http://localhost:5001";
 //const baseUrl = "http://10.45.5.20:9001";
+const baseUrl = "http://localhost:5000";
 
 const customBg = "#008f62";
 
 const BildirimlerCreateUrl = baseUrl + "/Api/Bildirimler/Create";
-const GetTokenUrl = baseUrl + "/connect/token";
-const GetUserUrl = baseUrl + "/api/User/GetUser";
+const GetTokenUrl = baseUrl + "/auth/connect/token";
+const GetUserUrl = baseUrl + "/auth/api/User/GetUser";
 
 
 const BasketGetUrl = baseUrl + "/Basket/Basket/GetBasket"

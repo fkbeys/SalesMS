@@ -17,6 +17,18 @@ builder.Services.AddControllers(opt =>
 
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+        });
+});
+
+
 // Add configuration sources
 builder.Configuration
     .SetBasePath(builder.Environment.ContentRootPath)
@@ -40,7 +52,7 @@ builder.Services.AddOcelot(builder.Configuration);
 
 // Build the application
 var app = builder.Build();
-
+app.UseCors();
 app.UseAuthorization();
 app.UseAuthentication();
 

@@ -48,6 +48,9 @@ namespace SalesMS.Services.Catalog.CatalogApi.CatalogServices
 
                     }
                 }
+
+                 
+
                 return GenericResponse<List<CourseDto>>.Success(coursesCnv, 200);
             }
             catch (Exception ex)

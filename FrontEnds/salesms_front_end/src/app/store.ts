@@ -1,11 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import YetkilerSlice from '../Slices/YetkilerSlice';
 import ThemeSlice from '../Slices/TemaSlice';
+import CourseSlice from '../Slices/CourseSlice';
 
 
 export const store = configureStore({
   reducer: {
-    YetkilerSlice: YetkilerSlice.reducer,
+    CourseSlice: CourseSlice.reducer,
     ThemeSlice: ThemeSlice.reducer
   },
 });

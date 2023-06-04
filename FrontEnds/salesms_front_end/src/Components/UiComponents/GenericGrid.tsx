@@ -87,16 +87,16 @@ const GenericGrid = (model: model) => {
         <GenericModal Height={0} Width={0}
             content={
                 <Box   >
-                    <h2>  Qeydi silmək istəyirsiniz?</h2>
-                    <h3>Silinmə əməliyyatından sonra qeydləri geri gətirmək mümkün deyil!</h3>
+                    <h2>  Are you sure to delete the record?</h2>
+                    <h3>It will not be possible to retrive the deleted data!</h3>
                     <YanyanaGetir
                         compA={<Button variant="contained" color='error' endIcon={<Delete />} onClick={() => { model.deleteButtonClickEvent(silinecekKayit); setDeleteModalState(false); }}>
-                            Silinsin. Razıyam...
+                            I m sure, i would like to delete.
                         </Button>}
 
                         compB={
                             <Button variant="contained" color='info' endIcon={<Cancel />} onClick={() => setDeleteModalState(false)} >
-                                Razı deyiləm. Silinməsin.
+                                Cancel
                             </Button>}
                         sizeA={0}
                         sizeB={0}
@@ -149,7 +149,7 @@ const GenericGrid = (model: model) => {
 
                 {model.showAddButton ?
                     <Button variant="contained" color='secondary' endIcon={<Add />} onClick={() => { model.addButtonClickEvent() }}>
-                        Əlavə Ədin
+                        Add
                     </Button>
                     : <div></div>
                 }

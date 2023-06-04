@@ -34,6 +34,9 @@ const UserLoginManager = async (username: string, password: string) => {
         });
         resultFromApi = response.data as AccessTokenResponse;
 
+        console.log(Url.GetUserUrl);
+
+
         const userInfoRequest = await axios.get<GenericApiResultModel<UserModel>>(Url.GetUserUrl, {
             headers: { Authorization: "Bearer " + resultFromApi.access_token }
         });
