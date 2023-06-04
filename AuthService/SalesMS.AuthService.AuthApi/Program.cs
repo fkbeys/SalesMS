@@ -46,12 +46,28 @@ namespace SalesMS.AuthService.AuthApi
                     dbContext.Database.EnsureCreated();
                     //dbContext.Database.Migrate();
 
-                    var userManagerObj = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+                    var rolesManagerObj = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                    if (!rolesManagerObj.Roles.Any())
+                    {
+                        rolesManagerObj.CreateAsync(new IdentityRole { Name = "User" }).Wait();
+                        rolesManagerObj.CreateAsync(new IdentityRole { Name = "Admin" }).Wait();
+                    }
 
+
+                    var userManagerObj = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>(); 
                     if (!userManagerObj.Users.Any())
                     {
-                        userManagerObj.CreateAsync(new ApplicationUser { UserName = "admin", Email = "admin@admin.com", }, "Password12*").Wait();
+                        var newUser = new ApplicationUser { UserName = "admin", Email = "admin@admin.com" };
+                        userManagerObj.CreateAsync(newUser, "Password12*").Wait();
+
+                       // var newAdminUser = userManagerObj.FindByEmailAsync(newUser.Email); 
+                        userManagerObj.AddToRoleAsync(newUser, "Admin").Wait();
                     }
+
+
+                     
+                   
+
                 }
 
                 Log.Information("Starting host...");

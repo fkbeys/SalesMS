@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SalesMS.AuthService.AuthApi.Dtos;
+using SalesMS.AuthService.AuthApi.Models;
 using SalesMS.AuthService.AuthApi.Services;
 using SalesMS.Shared.SharedClass.BaseClasses;
 using System.IdentityModel.Tokens.Jwt;
@@ -39,7 +40,7 @@ namespace SalesMS.AuthService.AuthApi.Controllers
                 return BadRequest();
             }
 
-            var user = await _userService.FindUserById(userClaim.Value);
+            var user = await _userService.FindUserById(userClaim.Value); 
             return ResponseResolver(user);
         }
 

@@ -4,8 +4,6 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import './index.css';
-import { HashRouter } from 'react-router-dom';
-
 import './i18n.js';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';

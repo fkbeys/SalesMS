@@ -1,4 +1,5 @@
 export interface UserModel {
+    roles: string[]
     id: string
     userName: string
     normalizedUserName: string
