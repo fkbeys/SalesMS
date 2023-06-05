@@ -50,6 +50,7 @@ const PaymentMakeUrl = baseUrl + "/Payment/Payment/MakePayment"
 
 const PhotoSaveUrl = baseUrl + "/Photostock/Photo/SavePhoto"
 const PhotoDeleteUrl = baseUrl + "/Photostock/Photo/DeletePhoto"
+const PhotoShowUrl = baseUrl + "/GetPhoto/"
 
 const Url = {
   baseUrl,
@@ -80,8 +81,10 @@ const Url = {
   OrderGetUrl,
   OrderSaveUrl,
   PaymentMakeUrl,
+
   PhotoSaveUrl,
   PhotoDeleteUrl,
+  PhotoShowUrl,
 
   BildirimlerCreateUrl
 };

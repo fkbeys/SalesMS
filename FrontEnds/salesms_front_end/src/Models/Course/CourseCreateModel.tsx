@@ -8,5 +8,4 @@ export interface CourseCreateModel {
     userId: string
     feature: FeatureModel
     categoryId: string
-    Photo: File
 }
