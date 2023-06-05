@@ -5,6 +5,7 @@ import { GenericApiResultModel, GenericApiResultModelWithPagination } from "../M
 import { CourseModel } from "../Models/Course/CourseModel";
 import Url from "../Consts/Url";
 import { useAuthUser } from "react-auth-kit";
+import { CourseCreateModel } from "../Models/Course/CourseCreateModel";
 
 const GetAll = async (model: RequestDataWithPaginationModel) => {
 
@@ -24,17 +25,29 @@ const GetAll = async (model: RequestDataWithPaginationModel) => {
 }
 
 
-const Create = async (model: any, token: string) => {
-
-    console.log(token);
-
-
+const Create = async (model: CourseCreateModel, token: string) => {
     let resx = { isSuccess: false } as GenericApiResultModel<CourseModel>;
-
     try {
         const url = Url.CourseCreateUrl;
-        const result = await axios.post<GenericApiResultModel<CourseModel>>(url, model, {
-            headers: { Authorization: token }
+        let formData = new FormData();
+        if (model.Photo) {
+            formData.append('Photo', model.Photo);
+        }
+        formData.append('name', model.name);
+        formData.append('decription', model.decription);
+        formData.append('price', model.price.toString());
+        formData.append('picture', model.picture);
+        formData.append('userId', model.userId);
+        formData.append('categoryId', model.categoryId);
+
+        if (model.feature) {
+            formData.append('feature', JSON.stringify(model.feature));
+        }
+        const result = await axios.post<GenericApiResultModel<CourseModel>>(url, formData, {
+            headers: {
+                'Authorization': token,
+                'Content-Type': 'multipart/form-data'
+            }
         });
 
         resx = result.data;
@@ -43,8 +56,32 @@ const Create = async (model: any, token: string) => {
         resx.message += ' ' + error;
         return resx;
     }
-
 }
+
+
+
+
+// const Create = async (model: any, token: string) => {
+
+//     console.log(token);
+
+
+//     let resx = { isSuccess: false } as GenericApiResultModel<CourseModel>;
+
+//     try {
+//         const url = Url.CourseCreateUrl;
+//         const result = await axios.post<GenericApiResultModel<CourseModel>>(url, model, {
+//             headers: { Authorization: token }
+//         });
+
+//         resx = result.data;
+//         return resx;
+//     } catch (error) {
+//         resx.message += ' ' + error;
+//         return resx;
+//     }
+
+// }
 
 const Delete = async (courseId: string, token: string) => {
 

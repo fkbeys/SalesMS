@@ -9,7 +9,7 @@ import GenericNumericInput from "../../Components/Inputs/GenericNumericInput";
 import moment from "moment";
 import { ConvertDbDateFormatToDayMonthYear } from "../../Consts/DbTarihFormatiniNormaleCevir";
 import UserInfoManager from "../../Authorization/UserInfoManager";
-import { CategoryModel } from "../../Models/Course/CategoryModel";
+import { CategoryModel } from "../../Models/Category/CategoryModel";
 
 interface model {
   obj: CategoryModel;

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { GenericApiResultModel, GenericApiResultModelWithPagination } from "../Models/Generic/ApiResultModel";
 import { RequestDataWithPaginationModel } from "../Models/Generic/RequestDataWithPaginationModel";
-import { CategoryModel } from "../Models/Course/CategoryModel";
+import { CategoryModel } from "../Models/Category/CategoryModel";
 import CategoryManager from "../Managers/CategoryManager";
 
 

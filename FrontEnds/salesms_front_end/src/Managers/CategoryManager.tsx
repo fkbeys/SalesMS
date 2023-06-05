@@ -4,7 +4,7 @@ import { RequestDataWithPaginationModel } from "../Models/Generic/RequestDataWit
 import { GenericApiResultModel, GenericApiResultModelWithPagination } from "../Models/Generic/ApiResultModel";
 
 import Url from "../Consts/Url";
-import { CategoryModel } from "../Models/Course/CategoryModel";
+import { CategoryModel } from "../Models/Category/CategoryModel";
 
 const GetAll = async (model: RequestDataWithPaginationModel) => {
 

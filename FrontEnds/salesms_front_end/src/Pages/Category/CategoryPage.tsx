@@ -13,7 +13,7 @@ import CategoryCreateUpdateUI from "./CategoryCreateUpdateUI";
 import GenericGrid from "../../Components/UiComponents/GenericGrid";
 import { GuidGenerator } from "../../Consts/GuidGenerator";
 import { ConvertDbDateFormatToDayMonthYear } from "../../Consts/DbTarihFormatiniNormaleCevir";
-import { CategoryModel } from "../../Models/Course/CategoryModel";
+import { CategoryModel } from "../../Models/Category/CategoryModel";
 
 
 interface model {

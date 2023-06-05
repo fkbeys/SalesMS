@@ -57,15 +57,10 @@ namespace SalesMS.Services.Catalog.CatalogApi.CatalogServices
         public async Task<GenericResponse<CourseCreateDto>> CreateAsync(CourseCreateDto courseDto)
         {
             try
-            {
-
-                var isExist = await _CourseCollection.Find(x => x.name == courseDto.name).FirstOrDefaultAsync();
-
-
-                var newCourse = _mapper.Map<Course>(courseDto);
-
-                newCourse.createdDateTime = DateTime.Now;
-
+            { 
+                var isExist = await _CourseCollection.Find(x => x.name == courseDto.name).FirstOrDefaultAsync(); 
+                var newCourse = _mapper.Map<Course>(courseDto); 
+                newCourse.createdDateTime = DateTime.Now; 
                 if (isExist != null)
                 {
                     newCourse.id = isExist.id;

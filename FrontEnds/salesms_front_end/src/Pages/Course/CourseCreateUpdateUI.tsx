@@ -13,8 +13,9 @@ import UserInfoManager from "../../Authorization/UserInfoManager";
 import { FeatureModel } from "../../Models/Course/FeatureModel";
 import YanyanaGetir from "../../Components/UiComponents/YanyanaGetir";
 import CategorySelectPage from "../SelectPages/CategorySelectPage";
-import { CategoryModel } from "../../Models/Course/CategoryModel";
+import { CategoryModel } from "../../Models/Category/CategoryModel";
 import { useAuthHeader } from "react-auth-kit";
+import { CourseCreateModel } from "../../Models/Course/CourseCreateModel";
 
 
 
@@ -25,10 +26,6 @@ interface model {
 
 const CourseCreateUpdateUI = (model: model) => {
   const authHeader = useAuthHeader();
-
-
-
-
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -44,6 +41,7 @@ const CourseCreateUpdateUI = (model: model) => {
   const [userId, setuserId] = useState(course?.userId || "");
   const [feature, setfeature] = useState(course?.feature || {} as FeatureModel);
   const [category, setcategory] = useState(course?.category || { name: "" });
+  const [photo, setphoto] = useState<File | null>(null);
   //-------------------------------------------------------------------------------------------
 
   const user = UserInfoManager.ReadUserFromLocalStorage();
@@ -55,8 +53,10 @@ const CourseCreateUpdateUI = (model: model) => {
       price: price,
       userId: user.id,
       feature: feature,
-      categoryId: category?.id
-    };
+      categoryId: category?.id,
+      Photo: photo
+
+    } as CourseCreateModel;
 
     const result = await CourseManager.Create(newCourse, authHeader());
 
@@ -68,6 +68,13 @@ const CourseCreateUpdateUI = (model: model) => {
     }
   }
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let file = e.target.files && e.target.files[0];
+    if (file) {
+      setphoto(file);
+    }
+  };
+
 
 
   return (
@@ -75,6 +82,8 @@ const CourseCreateUpdateUI = (model: model) => {
 
 
       <Grid container spacing={2}>
+        <Grid item xs={2}><input accept="image/*" type="file" onChange={handleImageChange} />
+        </Grid>
         <Grid item xs={6} ><h3>Course Edit/Create</h3> </Grid>
         <Grid item xs={6} textAlign="end"><h5>{ConvertDbDateFormatToDayMonthYear(createdDateTime, true)}</h5> </Grid>
         <Grid item xs={4}><TextField size="small" fullWidth onChange={(x) => { setname(x.target.value); }} value={name} label="Name" variant="outlined" /></Grid>

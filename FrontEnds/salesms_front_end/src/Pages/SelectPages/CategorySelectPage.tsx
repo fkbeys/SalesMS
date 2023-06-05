@@ -4,7 +4,7 @@ import { useState } from 'react'
 import CustomButtonContained from '../../Components/UiComponents/CustomButtonContained';
 import GenericModal from '../../Components/UiComponents/GenericModal';
 import CategoryPage from '../Category/CategoryPage';
-import { CategoryModel } from '../../Models/Course/CategoryModel';
+import { CategoryModel } from '../../Models/Category/CategoryModel';
 
 
 interface model {

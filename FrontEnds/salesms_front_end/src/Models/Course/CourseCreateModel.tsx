@@ -1,16 +1,12 @@
-import { CategoryModel } from "../Category/CategoryModel"
 import { FeatureModel } from "./FeatureModel"
 
-export interface CourseModel {
-
-    id: string
+export interface CourseCreateModel {
     name: string
     decription: string
     price: number
     picture: string
-    createdDateTime: string
     userId: string
     feature: FeatureModel
     categoryId: string
-    category: CategoryModel
+    Photo: File
 }
