@@ -17,6 +17,8 @@ import { ConvertDbDateFormatToDayMonthYear } from "../../Consts/DbTarihFormatini
 import CourseManager from "../../Managers/CourseManager";
 import { useAuthHeader } from "react-auth-kit";
 import { toast } from "react-hot-toast";
+import Url from "../../Consts/Url";
+import PhotoApiManager from "../../Managers/PhotoApiManager";
 
 
 interface model {
@@ -42,6 +44,7 @@ const CoursePage = (model: model) => {
 
         if (result.isSuccess) {
             toast.success("Course deleted...");
+            await PhotoApiManager.DeletePhoto(row.picture, authHeader());
         } else {
             toast.error(result.message);
         }
@@ -104,8 +107,14 @@ const CoursePage = (model: model) => {
         );
     }
 
+    const imageStyle = {
+        width: '100px',
+        height: '100px'
+    };
+
     const columns = useMemo<MRT_ColumnDef<CourseModel | any>[]>(
         () => [
+            { accessorKey: "picture", header: "Picture", accessorFn: (originalRow) => <img src={Url.PhotoShowUrl + '/' + originalRow.picture} alt="Your alt text here" style={imageStyle} />, enableColumnFilter: false },
             { accessorKey: "name", header: "Name", size: 200, enableColumnFilter: false },
             { accessorKey: "decription", header: "Decription", size: 200, enableColumnFilter: false },
             { accessorKey: "price", header: "Price", size: 200, enableColumnFilter: false },

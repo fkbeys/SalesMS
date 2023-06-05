@@ -120,27 +120,6 @@ const CourseCreateUpdateUI = (model: model) => {
   }
 
 
-  // const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   let file = e.target.files && e.target.files[0];
-  //   if (file) {
-  //     setphoto(file);
-  //   }
-  // };
-
-
-
-  // const Imagefxx = () => {
-  //   const imageUrl = `${Url.PhotoShowUrl}/${picture}`;
-  //   const imageStyle = {
-  //     width: '100px',
-  //     height: '100px'
-  //   };
-
-  //   return (
-  //     <img src={imageUrl} alt="Your alt text here" style={imageStyle} />
-  //   );
-  // }
-
   const [previewImage, setPreviewImage] = useState<string | undefined>(undefined);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
