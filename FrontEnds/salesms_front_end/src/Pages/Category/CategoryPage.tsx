@@ -6,26 +6,22 @@ import { Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import { AppDispatch } from "../../app/store";
-import { CourseModel } from "../../Models/Course/CourseModel";
-import { AsyncGetAllCourses } from "../../Slices/CourseSlice";
+import { AsyncGetAllCategorys } from "../../Slices/CategorySlice";
 import { RequestDataWithPaginationModel } from "../../Models/Generic/RequestDataWithPaginationModel";
 import GenericModal from "../../Components/UiComponents/GenericModal";
-import CourseCreateUpdateUI from "./CourseCreateUpdateUI";
+import CategoryCreateUpdateUI from "./CategoryCreateUpdateUI";
 import GenericGrid from "../../Components/UiComponents/GenericGrid";
 import { GuidGenerator } from "../../Consts/GuidGenerator";
 import { ConvertDbDateFormatToDayMonthYear } from "../../Consts/DbTarihFormatiniNormaleCevir";
-import CourseManager from "../../Managers/CourseManager";
-import { useAuthHeader } from "react-auth-kit";
-import { toast } from "react-hot-toast";
+import { CategoryModel } from "../../Models/Course/CategoryModel";
 
 
 interface model {
     afterSelection: Function;
 }
 
-const CoursePage = (model: model) => {
-    const authHeader = useAuthHeader();
-    const CourseSlice = useAppSelector((state) => state.CourseSlice);
+const CategoryPage = (model: model) => {
+    const CategorySlice = useAppSelector((state) => state.CategorySlice);
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
 
@@ -33,35 +29,24 @@ const CoursePage = (model: model) => {
         setEditModalState(true);
         setSelectedObj(row);
     }
-    function editButtonHandler(row: CourseModel) {
+    function editButtonHandler(row: CategoryModel) {
         setEditModalState(true);
         setSelectedObj(row);
     }
-    async function deleteButtonHandler(row: CourseModel) {
-        var result = await CourseManager.Delete(row.id, authHeader());
-
-        if (result.isSuccess) {
-            toast.success("Course deleted...");
-        } else {
-            toast.error(result.message);
-        }
-
-
-        RefreshGrid();
-    }
-    function rowDoubleClickHandler(row: CourseModel) {
+    async function deleteButtonHandler(row: CategoryModel) { }
+    function rowDoubleClickHandler(row: CategoryModel) {
         model.afterSelection(row);
     }
-    function rowClickHandler(row: CourseModel) { }
+    function rowClickHandler(row: CategoryModel) { }
     function rowSelectionHandler(data: any) {
         console.log(data);
     }
-    function rowKeyGetter(row: CourseModel) {
+    function rowKeyGetter(row: CategoryModel) {
         return row.id;
     }
     function addButtonHandler() {
         setEditModalState(true);
-        setSelectedObj({ id: GuidGenerator() } as CourseModel);
+        setSelectedObj({ id: GuidGenerator() } as CategoryModel);
     }
 
     const [pagination, setPagination] = useState(
@@ -69,7 +54,7 @@ const CoursePage = (model: model) => {
     );
     const [searchText, setsearchText] = useState("");
     const [editModalState, setEditModalState] = useState(false);
-    const [selectedObj, setSelectedObj] = useState({} as CourseModel);
+    const [selectedObj, setSelectedObj] = useState({} as CategoryModel);
     const [columntFilter, setcolumntFilter] = useState([
         { id: "", value: "" },
     ] as MRT_ColumnFiltersState);
@@ -94,7 +79,7 @@ const CoursePage = (model: model) => {
         }
 
         dispatch(
-            AsyncGetAllCourses({
+            AsyncGetAllCategorys({
                 pageIndex: pagination.pageIndex == undefined ? 0 : pagination.pageIndex,
                 pageSize: pagination.pageSize == undefined ? 0 : pagination.pageSize,
                 searchText: searchText == undefined ? "" : searchText,
@@ -104,28 +89,19 @@ const CoursePage = (model: model) => {
         );
     }
 
-    const columns = useMemo<MRT_ColumnDef<CourseModel | any>[]>(
+    const columns = useMemo<MRT_ColumnDef<CategoryModel | any>[]>(
         () => [
             { accessorKey: "name", header: "Name", size: 200, enableColumnFilter: false },
-            { accessorKey: "decription", header: "Decription", size: 200, enableColumnFilter: false },
-            { accessorKey: "price", header: "Price", size: 200, enableColumnFilter: false },
-            { accessorKey: "createdDateTime", header: "CreatedDateTime", accessorFn: (originalRow) => ConvertDbDateFormatToDayMonthYear(originalRow.CreatedDateTime, true), enableColumnFilter: false },
-            { accessorKey: "category", header: "Category", size: 200, accessorFn: (originalRow) => originalRow?.category?.name ?? "", enableColumnFilter: false },
         ],
         []
     );
-
-
-    console.log(CourseSlice?.courses);
-
-
 
     const ModalUI = (
         <GenericModal
             Height={0}
             Width={70}
             content={
-                <CourseCreateUpdateUI
+                <CategoryCreateUpdateUI
                     obj={selectedObj}
                     afterSuccesfullSave={() => {
                         RefreshGrid();
@@ -145,12 +121,12 @@ const CoursePage = (model: model) => {
             {ModalUI}
 
             <Grid item xs={12}>
-                {CourseSlice.errorMessage}
+                {CategorySlice.errorMessage}
                 <GenericGrid
                     rowDoubleClickCellHandleEvent={() => { }}
                     columns={columns}
-                    data={CourseSlice?.courses}
-                    isBusy={CourseSlice?.isBusy}
+                    data={CategorySlice?.Categorys}
+                    isBusy={CategorySlice?.isBusy}
                     viewButtonClickEvent={viewButtonHandler}
                     editButtonClickEvent={editButtonHandler}
                     deleteButtonClickEvent={deleteButtonHandler}
@@ -160,7 +136,7 @@ const CoursePage = (model: model) => {
                     rowKeyGetter={rowKeyGetter}
                     selectedRows={rowSelectionHandler}
                     paginationChanged={setPagination}
-                    totalItemsCount={CourseSlice?.itemsCount}
+                    totalItemsCount={CategorySlice?.itemsCount}
                     showRowActions
                     addButtonClickEvent={addButtonHandler}
                     showAddButton
@@ -179,4 +155,4 @@ const CoursePage = (model: model) => {
     );
 };
 
-export default CoursePage;
+export default CategoryPage;

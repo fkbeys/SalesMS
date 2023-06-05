@@ -17,33 +17,34 @@ namespace SalesMS.Services.Catalog.CatalogApi.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAll()
         {
             var data = await _CategoryService.GetAllAsync();
             return ResponseResolver(data as dynamic);
         }
-        [Authorize]
+        
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CategoryDto CategoryDto)
         {
             var data = await _CategoryService.CreateAsync(CategoryDto);
             return ResponseResolver(data as dynamic);
         }
-        [Authorize]
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> FindByIdAsync(string id)
         {
             var data = await _CategoryService.FindByIdAsync(id);
             return ResponseResolver(data as dynamic);
         }
-        [Authorize]
+        
         [HttpPut]
         public async Task<IActionResult> UpdateAsync([FromBody] CategoryDto CategoryDto)
         {
             var data = await _CategoryService.UpdateAsync(CategoryDto);
             return ResponseResolver(data as dynamic);
         }
-        [Authorize]
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {

@@ -16,6 +16,7 @@ namespace SalesMS.Services.Catalog.CatalogApi.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAll()
         {
             var data = await _courseService.GetAllAsync();

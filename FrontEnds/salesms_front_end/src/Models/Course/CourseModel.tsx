@@ -6,7 +6,7 @@ export interface CourseModel {
     id: string
     name: string
     decription: string
-    price: string
+    price: number
     picture: string
     createdDateTime: string
     userId: string

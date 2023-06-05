@@ -21,8 +21,10 @@ namespace SalesMS.Services.Catalog.CatalogApi.CatalogServices
             MongoClient? client = new MongoClient(databaseSettings.ConnectionSettings);
             var database = client.GetDatabase(databaseSettings.DatabaseName);
             _CourseCollection = database.GetCollection<Course>(databaseSettings.CourseCollectionName);
+            _CategoryCollection = database.GetCollection<Category>(databaseSettings.CategoryCollectionName);
             _mapper = mapper;
         }
+
         public async Task<GenericResponse<List<CourseDto>>> GetAllAsync()
         {
             try
@@ -33,24 +35,17 @@ namespace SalesMS.Services.Catalog.CatalogApi.CatalogServices
                 if (!courses.Any())
                     courses = new List<Course>();
 
-                foreach (var item in courses)
+                foreach (var item in coursesCnv)
                 {
-                    try
-                    {
-                        var category = await _CategoryCollection.FindAsync(x => x.id == item.id);
-                        if (category != null)
-                        {
-                            item.category = await category.FirstOrDefaultAsync();
-                        }
-                    }
-                    catch (Exception)
-                    {
 
+                    Category? category = await _CategoryCollection.Find(x => x.id == item.categoryId).FirstOrDefaultAsync();
+                    if (category != null)
+                    {
+                        var categoryCnv = _mapper.Map<CategoryDto>(category);
+                        item.category = categoryCnv ?? new CategoryDto { id = "", name = "" };
                     }
+
                 }
-
-                 
-
                 return GenericResponse<List<CourseDto>>.Success(coursesCnv, 200);
             }
             catch (Exception ex)
@@ -63,12 +58,25 @@ namespace SalesMS.Services.Catalog.CatalogApi.CatalogServices
         {
             try
             {
+
+                var isExist = await _CourseCollection.Find(x => x.name == courseDto.name).FirstOrDefaultAsync();
+
+
                 var newCourse = _mapper.Map<Course>(courseDto);
-                newCourse.id = null;
+
                 newCourse.createdDateTime = DateTime.Now;
 
+                if (isExist != null)
+                {
+                    newCourse.id = isExist.id;
+                    await _CourseCollection.FindOneAndReplaceAsync(x => x.name == courseDto.name, newCourse);
+                }
+                else
+                {
+                    newCourse.id = null;
+                    await _CourseCollection.InsertOneAsync(newCourse);
+                }
 
-                await _CourseCollection.InsertOneAsync(newCourse);
                 return GenericResponse<CourseCreateDto>.Success(courseDto, 200);
             }
             catch (Exception ex)

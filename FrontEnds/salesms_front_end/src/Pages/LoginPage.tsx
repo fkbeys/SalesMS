@@ -71,11 +71,11 @@ const LoginPage: React.FC = () => {
         if (result?.access_token?.length > 0) {
             signIn({
                 token: result.access_token,
-                expiresIn: 1,
+                expiresIn: 3600, //1 hour
                 tokenType: 'Bearer',
                 refreshToken: result.refresh_token,
-                refreshTokenExpireIn: 1,
-                authState: [result.scope]
+                refreshTokenExpireIn: 3600 * 24 * 60, //60 days
+                authState: [result.access_token]
             });
 
             toast.success("Logged in. You are redirecting...");

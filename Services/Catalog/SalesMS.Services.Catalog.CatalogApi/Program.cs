@@ -9,7 +9,7 @@ IConfiguration conf = builder.Configuration;
 
 builder.Services.AddControllers(opt =>
 {
-   // opt.Filters.Add(new AuthorizeFilter());
+    opt.Filters.Add(new AuthorizeFilter());
 
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -34,7 +34,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
- 
+
 
 var app = builder.Build();
 
