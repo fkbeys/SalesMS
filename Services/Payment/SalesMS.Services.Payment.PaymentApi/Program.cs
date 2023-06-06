@@ -1,7 +1,7 @@
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using SalesMS.Shared.SharedClass.Messages;
+using SalesMS.Services.Payment.PaymentApi;
 using SalesMS.Shared.SharedClass.UserService;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -45,31 +45,30 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string rabbitmqurl = conf["RabbitMQUrl"] ?? "";
-string username = conf["RabbitMQUserName"] ?? "";
-string pass = conf["RabbitMQPass"] ?? "";
+builder.Services.AddMassTransitExtension(conf);
 
-builder.Services.AddMassTransit((opt) =>
-{
-    opt.UsingRabbitMq((context, cfg) =>
-    {
-        cfg.Host(rabbitmqurl, host =>
-        {
-            host.Username(username);
-            host.Password(pass);
-        });  
-        cfg.ReceiveEndpoint("input-queue", e =>
-        {
-            e.Bind("SalesMS.Shared.SharedClass.Messages:CreateOrderMessageCommand");
-            e.Bind<CreateOrderMessageCommandConsumer>();
-        });
+//string rabbitmqurl = conf["RabbitMQUrl"] ?? "";
+//string username = conf["RabbitMQUserName"] ?? "";
+//string pass = conf["RabbitMQPass"] ?? "";
 
-    });
-     
-});
+//builder.Services.AddMassTransit((opt) =>
+//{
+//    opt.UsingRabbitMq((context, cfg) =>
+//    {
+//        cfg.Host(rabbitmqurl, host =>
+//        {
+//            host.Username(username);
+//            host.Password(pass);
+//        });  
+//        cfg.ReceiveEndpoint("input-queue", e =>
+//        {
+//            e.Bind("exchange-name");
+//            e.Bind<CreateOrderMessageCommandConsumer>();
+//        });
 
+//    });
 
-
+//});
 
 var app = builder.Build();
 

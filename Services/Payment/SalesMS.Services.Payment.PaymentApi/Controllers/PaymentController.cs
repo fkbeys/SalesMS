@@ -16,21 +16,18 @@ namespace SalesMS.Services.Payment.PaymentApi.Controllers
             this._bus = bus;
         }
 
-
         [HttpGet("{isSuccessfull}")]
         public async Task<IActionResult> MakePayment(string courseId, string userId, bool isSuccessfull)
         {
             if (isSuccessfull)
             {
                 var result = GenericResponse<GenericNoContent>.Success(200);
-
                 var ordermessage = new CreateOrderMessageCommand
                 {
                     BuyerId = userId,
                     CourseId = courseId,
                     PaymentId = Guid.NewGuid().ToString()
                 };
-
                 await _bus.Publish(ordermessage);
                 return ResponseResolver(result);
             }
