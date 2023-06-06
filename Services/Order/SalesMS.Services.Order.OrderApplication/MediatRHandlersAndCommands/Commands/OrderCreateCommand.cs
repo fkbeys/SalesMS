@@ -10,4 +10,11 @@ namespace SalesMS.Services.Order.OrderApplication.MediatRHandlersAndCommands.Com
         public List<OrderItemDto> OrderItems { get; set; }
         public AddressDto address { get; set; }
     }
+
+
+     
+    
+
+
+
 }

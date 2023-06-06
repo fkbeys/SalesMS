@@ -1,31 +1,37 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MassTransit;
+using Microsoft.AspNetCore.Mvc;
 using SalesMS.Shared.SharedClass.BaseClasses;
 using SalesMS.Shared.SharedClass.Dtos;
+using SalesMS.Shared.SharedClass.Messages;
 
 namespace SalesMS.Services.Payment.PaymentApi.Controllers
 {
 
     public class PaymentController : GenericBaseController
     {
-        public PaymentController()
-        {
+        private readonly IBus _bus;
 
+        public PaymentController(IBus bus)
+        {
+            this._bus = bus;
         }
 
 
-
-        /// <summary>
-        /// this payment method is a fake one,  
-        /// </summary>
-        /// <param name="isSuccessfull"></param>
-        /// <returns>to test the application, the isSuccessfull parameter will help you to get
-        /// is payment successfull or not.  </returns>
         [HttpGet("{isSuccessfull}")]
-        public async Task<IActionResult> MakePayment(bool isSuccessfull)
+        public async Task<IActionResult> MakePayment(string courseId, string userId, bool isSuccessfull)
         {
             if (isSuccessfull)
             {
                 var result = GenericResponse<GenericNoContent>.Success(200);
+
+                var ordermessage = new CreateOrderMessageCommand
+                {
+                    BuyerId = userId,
+                    CourseId = courseId,
+                    PaymentId = Guid.NewGuid().ToString()
+                };
+
+                await _bus.Publish(ordermessage);
                 return ResponseResolver(result);
             }
             else
@@ -33,12 +39,7 @@ namespace SalesMS.Services.Payment.PaymentApi.Controllers
                 var result = GenericResponse<GenericNoContent>.Fail("Payment declined", 200);
                 return ResponseResolver(result);
             }
-
-
-
         }
-
-
 
     }
 }
