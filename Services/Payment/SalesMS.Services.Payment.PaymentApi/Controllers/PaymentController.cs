@@ -1,8 +1,8 @@
 ﻿using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using SalesMS.Services.Order.OrderApplication.MessageConsumers;
 using SalesMS.Shared.SharedClass.BaseClasses;
 using SalesMS.Shared.SharedClass.Dtos;
-using SalesMS.Shared.SharedClass.Messages;
 
 namespace SalesMS.Services.Payment.PaymentApi.Controllers
 {
@@ -22,7 +22,7 @@ namespace SalesMS.Services.Payment.PaymentApi.Controllers
             if (isSuccessfull)
             {
                 var result = GenericResponse<GenericNoContent>.Success(200);
-                var ordermessage = new CreateOrderMessageCommand
+                var ordermessage = new PaymentSuccessfullMessageCommand
                 {
                     BuyerId = userId,
                     CourseId = courseId,

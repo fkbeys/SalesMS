@@ -1,7 +1,7 @@
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using SalesMS.Services.Payment.PaymentApi;
+using SalesMS.Shared.SharedClass.StartUpRegisters;
 using SalesMS.Shared.SharedClass.UserService;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -43,9 +43,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddMassTransitExtension(conf);
+builder.Services.AddSwaggerGen(); 
+ builder.Services.MasstransitPublisherRegisterationExtention(conf);
 
 //string rabbitmqurl = conf["RabbitMQUrl"] ?? "";
 //string username = conf["RabbitMQUserName"] ?? "";

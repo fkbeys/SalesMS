@@ -12,9 +12,4 @@ namespace SalesMS.Services.Order.OrderApplication.MediatRHandlersAndCommands.Com
     }
 
 
-     
-    
-
-
-
 }
