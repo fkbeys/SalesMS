@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>c44b0131-ff2f-4795-ad63-a45bf6023a29</ProjectGuid>
+    <ProjectGuid>3847ae62-40ea-41f8-9509-768ef306e40a</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>salesms.gateways.maingateway</DockerServiceName>

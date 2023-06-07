@@ -4,7 +4,13 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "salesms.gateways.maingateway": "StartDebugging"
+        "salesms.gateways.maingateway": "StartDebugging",
+        "salesms.authservice.authapi": "StartDebugging",
+        "salesms.services.basket.basketapi": "StartDebugging",
+        "salesms.services.discount.discountapi": "StartDebugging",
+        "salesms.services.order.orderapi": "StartDebugging",
+        "salesms.services.payment.paymentapi": "StartDebugging",
+        "salesms.services.photostock.photostockapi": "StartDebugging"
       }
     }
   }

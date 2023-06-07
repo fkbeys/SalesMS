@@ -1,8 +1,60 @@
 version: '3.4'
 
 services:
+  salesms.authservice.authapi:
+    image: ${DOCKER_REGISTRY-}salesmsauthserviceauthapi
+    build:
+      context: .
+      dockerfile: AuthService/SalesMS.AuthService.AuthApi/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - SqlConnectionString=server=161.35.212.30,1433;database=AuthDb;user id=sa;password=YourStrongPassword; Pooling = true; Max Pool Size = 2000;Encrypt=False;
+
   salesms.gateways.maingateway:
     image: ${DOCKER_REGISTRY-}salesmsgatewaysmaingateway
     build:
       context: .
       dockerfile: Gateways/SalesMS.Gateways.MainGateway/SalesMS.Gateways.MainGateway/Dockerfile
+    ports:
+      - "5000:80"
+
+  salesms.services.basket.basketapi:
+    image: ${DOCKER_REGISTRY-}salesmsservicesbasketbasketapi
+    build:
+      context: .
+      dockerfile: Services/Basket/SalesMS.Services.Basket.BasketApi/Dockerfile
+    ports:
+      - "5002:80"
+
+  salesms.services.discount.discountapi:
+    image: ${DOCKER_REGISTRY-}salesmsservicesdiscountdiscountapi
+    build:
+      context: .
+      dockerfile: Services/Discount/SalesMS.Services.Discount.DiscountApi/Dockerfile
+    ports:
+      - "5003:80"
+
+  salesms.services.order.orderapi:
+    image: ${DOCKER_REGISTRY-}salesmsservicesorderorderapi
+    build:
+      context: .
+      dockerfile: Services/Order/SalesMS.Services.Order.OrderApi/Dockerfile
+    ports:
+      - "5004:80"
+
+  salesms.services.payment.paymentapi:
+    image: ${DOCKER_REGISTRY-}salesmsservicespaymentpaymentapi
+    build:
+      context: .
+      dockerfile: Services/Payment/SalesMS.Services.Payment.PaymentApi/Dockerfile
+    ports:
+      - "5005:80"
+
+  salesms.services.photostock.photostockapi:
+    image: ${DOCKER_REGISTRY-}salesmsservicesphotostockphotostockapi
+    build:
+      context: .
+      dockerfile: Services/PhotoStock/SalesMS.Services.PhotoStock.PhotoStockApi/Dockerfile
+    ports:
+      - "5006:80"

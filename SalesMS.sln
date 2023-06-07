@@ -58,6 +58,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Gateways.MobileGate
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnds", "FrontEnds", "{527FBD86-A915-49B8-B2B6-36CB1901E0EB}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3847AE62-40EA-41F8-9509-768EF306E40A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -120,6 +122,10 @@ Global
 		{ABE8ED86-1D82-4B31-8F97-81BF9B9C311A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABE8ED86-1D82-4B31-8F97-81BF9B9C311A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABE8ED86-1D82-4B31-8F97-81BF9B9C311A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3847AE62-40EA-41F8-9509-768EF306E40A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3847AE62-40EA-41F8-9509-768EF306E40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3847AE62-40EA-41F8-9509-768EF306E40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3847AE62-40EA-41F8-9509-768EF306E40A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,51 @@
 version: '3.4'
 
 services:
+  salesms.authservice.authapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
   salesms.gateways.maingateway:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
+
+
+  salesms.services.basket.basketapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
+  salesms.services.discount.discountapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
+  salesms.services.order.orderapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
+  salesms.services.payment.paymentapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
+  salesms.services.photostock.photostockapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
