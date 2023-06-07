@@ -5,8 +5,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "salesms.authservice.authapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Auth/{everything}",
@@ -18,8 +18,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5011
+          "Host": "salesms.services.basket.basketapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/{everything}",
@@ -31,8 +31,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5012
+          "Host": "salesms.services.photostock.photostockapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/PhotoStock/{everything}",
@@ -44,8 +44,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5012
+          "Host": "salesms.services.photostock.photostockapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/GetPhoto/{everything}",
@@ -57,8 +57,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5013
+          "Host": "salesms.services.basket.basketapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Basket/{everything}",
@@ -74,8 +74,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5014
+          "Host": "salesms.services.discount.discountapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Discount/{everything}",
@@ -91,8 +91,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5015
+          "Host": "salesms.services.order.orderapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Order/{everything}",
@@ -108,8 +108,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5016
+          "Host": "salesms.services.payment.paymentapi",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Payment/{everything}",

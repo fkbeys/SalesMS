@@ -1,16 +1,6 @@
 version: '3.4'
 
 services:
-  salesms.authservice.authapi:
-    image: ${DOCKER_REGISTRY-}salesmsauthserviceauthapi
-    build:
-      context: .
-      dockerfile: AuthService/SalesMS.AuthService.AuthApi/Dockerfile
-    ports:
-      - "5001:80"
-    environment:
-      - SqlConnectionString=server=161.35.212.30,1433;database=AuthDb;user id=sa;password=YourStrongPassword; Pooling = true; Max Pool Size = 2000;Encrypt=False;
-
   salesms.gateways.maingateway:
     image: ${DOCKER_REGISTRY-}salesmsgatewaysmaingateway
     build:
@@ -19,37 +9,64 @@ services:
     ports:
       - "5000:80"
 
+  salesms.authservice.authapi:
+    image: ${DOCKER_REGISTRY-}salesmsauthserviceauthapi
+    build:
+      context: .
+      dockerfile: AuthService/SalesMS.AuthService.AuthApi/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - SqlConnectionString=server=mssql-server,1433;database=AuthDb;user id=sa;password=YourStrongPassword;Pooling=true;Max Pool Size=2000;Encrypt=False;
+
   salesms.services.basket.basketapi:
     image: ${DOCKER_REGISTRY-}salesmsservicesbasketbasketapi
     build:
       context: .
       dockerfile: Services/Basket/SalesMS.Services.Basket.BasketApi/Dockerfile
+    environment:
+      - IdendityServerUrl=http://salesms.authservice.authapi
+      - NoSqlDbSettings__Host=redis
+      - NoSqlDbSettings__Port=6379
     ports:
-      - "5002:80"
+      - 5010:80
 
   salesms.services.discount.discountapi:
     image: ${DOCKER_REGISTRY-}salesmsservicesdiscountdiscountapi
     build:
       context: .
       dockerfile: Services/Discount/SalesMS.Services.Discount.DiscountApi/Dockerfile
+    environment:
+      - ConnectionStrings__PostgreSql=Server=postgresql:5432;Database=DiscountDb;User Id=postgres;Password=postgres
+      - IdendityServerUrl=http://salesms.authservice.authapi
     ports:
-      - "5003:80"
+      - 5012:80
 
   salesms.services.order.orderapi:
     image: ${DOCKER_REGISTRY-}salesmsservicesorderorderapi
     build:
       context: .
       dockerfile: Services/Order/SalesMS.Services.Order.OrderApi/Dockerfile
+    environment:
+      - RabbitMQUrl=amqp://rabbitmq:5672
+      - RabbitMQUserName=guest
+      - RabbitMQPass=guest
+      - ConnectionStrings__SqlConnectionString=server=mssql-server,1433;database=OrderDb;user id=sa;password=YourStrongPassword;Pooling=true;Max Pool Size=2000;Encrypt=False;
     ports:
-      - "5004:80"
+      - 5013:80
 
   salesms.services.payment.paymentapi:
     image: ${DOCKER_REGISTRY-}salesmsservicespaymentpaymentapi
     build:
       context: .
       dockerfile: Services/Payment/SalesMS.Services.Payment.PaymentApi/Dockerfile
+    environment:
+      - RabbitMQUrl=amqp://rabbitmq:5672
+      - RabbitMQUserName=guest
+      - RabbitMQPass=guest
+      - IdendityServerUrl=http://salesms.authservice.authapi
     ports:
-      - "5005:80"
+      - 5014:80
 
   salesms.services.photostock.photostockapi:
     image: ${DOCKER_REGISTRY-}salesmsservicesphotostockphotostockapi
@@ -58,3 +75,65 @@ services:
       dockerfile: Services/PhotoStock/SalesMS.Services.PhotoStock.PhotoStockApi/Dockerfile
     ports:
       - "5006:80"
+
+  salesms.services.catalog.catalogapi:
+    image: ${DOCKER_REGISTRY-}salesmsservicescatalogcatalogapi
+    build:
+      context: .
+      dockerfile: Services/Catalog/SalesMS.Services.Catalog.CatalogApi/Dockerfile
+    environment:
+      - IdendityServerUrl=http://salesms.authservice.authapi
+      - DatabaseSettings__CourseCollectionName=Courses
+      - DatabaseSettings__CategoryCollectionName=Categories
+      - DatabaseSettings__ConnectionSettings=mongodb://mongodb:27017
+      - DatabaseSettings__DatabaseName=CatalogDb
+    ports:
+      - 5011:80
+
+  redis:
+    image: redis:6.2
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  mongodb:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data
+
+  postgresql:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=DiscountDb
+
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq-data:/data
+
+  mssql-server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    volumes:
+      - mssql-data:/var/opt/mssql
+    environment:
+      - SA_PASSWORD=YourStrongPassword
+      - ACCEPT_EULA=Y
+
+volumes:
+  redis-data:
+  mongodb-data:
+  postgresql-data:
+  rabbitmq-data:
+  mssql-data:

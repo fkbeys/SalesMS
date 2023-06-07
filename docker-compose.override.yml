@@ -49,3 +49,10 @@ services:
     ports:
       - "80"
 
+
+  salesms.services.catalog.catalogapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
