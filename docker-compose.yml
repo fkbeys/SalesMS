@@ -131,6 +131,14 @@ services:
       - SA_PASSWORD=HelloMicroservices1990*
       - ACCEPT_EULA=Y
 
+  salesms.frontend.reactapp:
+    image: ${DOCKER_REGISTRY-}salesmsfrontendreactapp
+    build:
+      context: ./SalesMS/FrontEnds/salesms_front_end
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
 volumes:
   redis-data:
   mongodb-data:
