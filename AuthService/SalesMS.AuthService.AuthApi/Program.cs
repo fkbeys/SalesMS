@@ -63,11 +63,6 @@ namespace SalesMS.AuthService.AuthApi
                         // var newAdminUser = userManagerObj.FindByEmailAsync(newUser.Email); 
                         userManagerObj.AddToRoleAsync(newUser, "Admin").Wait();
                     }
-
-
-
-
-
                 }
 
                 Log.Information("Starting host...");

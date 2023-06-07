@@ -17,7 +17,7 @@ services:
     ports:
       - "5001:80"
     environment:
-      - SqlConnectionString=server=mssql-server,1433;database=AuthDb;user id=sa;password=YourStrongPassword;Pooling=true;Max Pool Size=2000;Encrypt=False;
+      - SqlConnectionString=server=mssql-server,1433;database=AuthDb;user id=sa;password=HelloMicroservices1990*;Pooling=true;Max Pool Size=2000;Encrypt=False;
 
   salesms.services.basket.basketapi:
     image: ${DOCKER_REGISTRY-}salesmsservicesbasketbasketapi
@@ -51,7 +51,7 @@ services:
       - RabbitMQUrl=amqp://rabbitmq:5672
       - RabbitMQUserName=guest
       - RabbitMQPass=guest
-      - ConnectionStrings__SqlConnectionString=server=mssql-server,1433;database=OrderDb;user id=sa;password=YourStrongPassword;Pooling=true;Max Pool Size=2000;Encrypt=False;
+      - ConnectionStrings__SqlConnectionString=server=mssql-server,1433;database=OrderDb;user id=sa;password=HelloMicroservices1990*;Pooling=true;Max Pool Size=2000;Encrypt=False;
     ports:
       - 5013:80
 
@@ -128,7 +128,7 @@ services:
     volumes:
       - mssql-data:/var/opt/mssql
     environment:
-      - SA_PASSWORD=YourStrongPassword
+      - SA_PASSWORD=HelloMicroservices1990*
       - ACCEPT_EULA=Y
 
 volumes:
