@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  salesms.gateways.maingateway:
+    image: ${DOCKER_REGISTRY-}salesmsgatewaysmaingateway
+    build:
+      context: .
+      dockerfile: Gateways/SalesMS.Gateways.MainGateway/SalesMS.Gateways.MainGateway/Dockerfile

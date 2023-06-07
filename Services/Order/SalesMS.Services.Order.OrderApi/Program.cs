@@ -1,10 +1,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using SalesMS.Services.Order.OrderApplication.OrderMappingsAndRegisters;
 using SalesMS.Services.Order.OrderApplication.Registrations;
 using SalesMS.Services.Order.OrderInfrastructure.DbContexts;
-using SalesMS.Shared.SharedClass.StartUpRegisters;
 using SalesMS.Shared.SharedClass.UserService;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -22,7 +20,7 @@ builder.Services.AddScoped<ISharedIdendityService, SharedIdendityService>();
 builder.Services.OrderMappingRegistrationsForService();
 builder.Services.ServiceRegistrationForOrderDbContextSql(sqlConnString);
 builder.Services.ServiceRegistrationForMediatRForService();
- 
+
 builder.Services.AddMassTransitExtension(conf);
 
 

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SalesMS.Shared.SharedClass.Dtos;
 using SalesMS.Shared.SharedClass.MiddlewareAndFilters;
-using YashilDehliz.Api.MiddleWares;
 
 namespace SalesMS.Shared.SharedClass.BaseClasses
 {

@@ -1,4 +1,4 @@
-﻿namespace YashilDehliz.Api.MiddleWares
+﻿namespace SalesMS.Shared.SharedClass.MiddlewareAndFilters
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;

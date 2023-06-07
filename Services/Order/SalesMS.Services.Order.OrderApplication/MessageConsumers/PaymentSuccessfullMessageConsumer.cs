@@ -1,4 +1,5 @@
 ﻿using MassTransit;
+using SalesMS.Shared.SharedClass.MessageConsumers;
 
 namespace SalesMS.Services.Order.OrderApplication.MessageConsumers
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace SalesMS.Services.Order.OrderApplication.OrderMappingsAndRegisters
+namespace SalesMS.Services.Order.OrderApplication.Registrations
 {
     public static class ServiceRegistrationForMediatR
     {

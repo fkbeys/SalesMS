@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SalesMS.Services.Order.OrderApplication.OrderMappingsAndRegisters;
+using SalesMS.Services.Order.OrderApplication.MappingProfiles;
 
 namespace SalesMS.Services.Order.OrderApplication.Registrations
 {

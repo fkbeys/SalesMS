@@ -2,7 +2,7 @@
 using SalesMs.Services.Order.OrderDomain.OrderAggregate;
 using SalesMS.Services.Order.OrderApplication.Dtos;
 
-namespace SalesMS.Services.Order.OrderApplication.OrderMappingsAndRegisters
+namespace SalesMS.Services.Order.OrderApplication.MappingProfiles
 {
     public class OrderMappingProfile : Profile
     {

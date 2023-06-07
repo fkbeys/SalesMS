@@ -54,19 +54,19 @@ namespace SalesMS.AuthService.AuthApi
                     }
 
 
-                    var userManagerObj = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>(); 
+                    var userManagerObj = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
                     if (!userManagerObj.Users.Any())
                     {
                         var newUser = new ApplicationUser { UserName = "admin", Email = "admin@admin.com" };
                         userManagerObj.CreateAsync(newUser, "Password12*").Wait();
 
-                       // var newAdminUser = userManagerObj.FindByEmailAsync(newUser.Email); 
+                        // var newAdminUser = userManagerObj.FindByEmailAsync(newUser.Email); 
                         userManagerObj.AddToRoleAsync(newUser, "Admin").Wait();
                     }
 
 
-                     
-                   
+
+
 
                 }
 

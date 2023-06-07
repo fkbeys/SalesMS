@@ -1,7 +1,6 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SalesMS.Services.Order.OrderApplication.MessageConsumers;
 
 namespace SalesMS.Shared.SharedClass.StartUpRegisters
 {
@@ -14,14 +13,14 @@ namespace SalesMS.Shared.SharedClass.StartUpRegisters
             string pass = conf["RabbitMQPass"] ?? "";
 
             services.AddMassTransit(x =>
-            {                
+            {
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
                 {
                     config.Host(new Uri(rabbitmqurl), h =>
                     {
                         h.Username(username);
                         h.Password(pass);
-                    }); 
+                    });
                 }));
             });
         }

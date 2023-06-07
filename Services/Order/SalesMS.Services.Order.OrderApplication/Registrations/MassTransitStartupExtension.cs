@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SalesMS.Services.Order.OrderApplication.MessageConsumers;
 
-namespace SalesMS.Shared.SharedClass.StartUpRegisters
+namespace SalesMS.Services.Order.OrderApplication.Registrations
 {
     public static class MassTransitStartupExtension
     {

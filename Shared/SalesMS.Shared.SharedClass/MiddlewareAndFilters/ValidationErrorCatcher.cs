@@ -26,7 +26,7 @@ namespace SalesMS.Shared.SharedClass.MiddlewareAndFilters
                 }
                 catch (Exception ex)
                 {
-                    string hata = ex.Message; 
+                    string hata = ex.Message;
                 }
                 finally
                 {

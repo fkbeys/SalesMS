@@ -1,5 +1,4 @@
-﻿using IdentityModel.Client;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using SalesMS.AuthService.AuthApi.Dtos;
 using SalesMS.AuthService.AuthApi.Models;
 using SalesMS.Shared.SharedClass.Dtos;

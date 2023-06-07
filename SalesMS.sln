@@ -54,7 +54,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{19
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Gateways.MainGateway", "Gateways\SalesMS.Gateways.MainGateway\SalesMS.Gateways.MainGateway\SalesMS.Gateways.MainGateway.csproj", "{B0D219DB-D982-427A-B9F8-CEDD320A58B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMS.Gateways.MobileGateway", "Gateways\SalesMS.Gateways.MobileGateway\SalesMS.Gateways.MobileGateway.csproj", "{ABE8ED86-1D82-4B31-8F97-81BF9B9C311A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesMS.Gateways.MobileGateway", "Gateways\SalesMS.Gateways.MobileGateway\SalesMS.Gateways.MobileGateway.csproj", "{ABE8ED86-1D82-4B31-8F97-81BF9B9C311A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnds", "FrontEnds", "{527FBD86-A915-49B8-B2B6-36CB1901E0EB}"
 EndProject

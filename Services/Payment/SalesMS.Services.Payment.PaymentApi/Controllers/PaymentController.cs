@@ -1,8 +1,8 @@
 ﻿using MassTransit;
 using Microsoft.AspNetCore.Mvc;
-using SalesMS.Services.Order.OrderApplication.MessageConsumers;
 using SalesMS.Shared.SharedClass.BaseClasses;
 using SalesMS.Shared.SharedClass.Dtos;
+using SalesMS.Shared.SharedClass.MessageConsumers;
 
 namespace SalesMS.Services.Payment.PaymentApi.Controllers
 {
