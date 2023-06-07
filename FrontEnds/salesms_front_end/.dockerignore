@@ -1,0 +1,28 @@
+# Log files
+*.log
+
+# Node.js dependencies
+node_modules
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Build directory
+/build
+
+# local env files
+.env
+
+# Ignore Git and other VCS files (.git, .hg, .svn, .bzr, .serf and .fossil by default)
+**/.git
+**/.svn
+**/.hg
+**/.serf
+**/.fossil
+**/.bzr
+
+# Next.js build output
+.next

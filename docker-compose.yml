@@ -1,6 +1,13 @@
 version: '3.4'
 
 services:
+  salesms_front_end:
+    build:
+      context: ./FrontEnds/salesms_front_end
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
   salesms.gateways.maingateway:
     image: ${DOCKER_REGISTRY-}salesmsgatewaysmaingateway
     build:
@@ -130,18 +137,7 @@ services:
     environment:
       - SA_PASSWORD=HelloMicroservices1990*
       - ACCEPT_EULA=Y
-
-  salesms.frontend.reactapp:
-    build:
-      context: .
-      dockerfile: FrontEnds/salesms_front_end/Dockerfile
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./FrontEnds/salesms_front_end:/app
-    command: >
-      sh -c "cd /app && npm install && npm start"
-
+ 
 volumes:
   redis-data:
   mongodb-data:

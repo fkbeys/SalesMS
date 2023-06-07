@@ -1,5 +1,5 @@
 # Base image
-FROM node:16
+FROM node:16 as build
 
 # Set working directory
 WORKDIR /app
@@ -16,8 +16,18 @@ COPY . .
 # Build production version
 RUN npm run build
 
+# Stage 2 - the production environment
+FROM nginx:1.19.0-alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Remove default Nginx configuration
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copy custom Nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/
+
 # Expose port 3000
 EXPOSE 3000
 
-# Start the app
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
