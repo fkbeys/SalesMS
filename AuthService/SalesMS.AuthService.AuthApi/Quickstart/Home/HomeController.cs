@@ -29,7 +29,7 @@ namespace SalesMS.AuthService.AuthApi.Quickstart.Home
 
         public IActionResult Index()
         {
-            if (_environment.IsDevelopment())
+            //if (_environment.IsDevelopment())
             {
                 // only show in development
                 return View();
@@ -52,7 +52,7 @@ namespace SalesMS.AuthService.AuthApi.Quickstart.Home
             {
                 vm.Error = message;
 
-                if (!_environment.IsDevelopment())
+                //if (!_environment.IsDevelopment())
                 {
                     // only show in development
                     message.ErrorDescription = null;
