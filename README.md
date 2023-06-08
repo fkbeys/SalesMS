@@ -30,4 +30,5 @@ Demo: http://161.35.212.30:3000/CatalogPage
 Username: admin
 
 Password: Password12*
+
 Note: This project has 13 containers in docker and it works on a 5 Usd/Month Digital Ocean VPS.
