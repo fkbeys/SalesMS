@@ -8,8 +8,12 @@
 // OrderApi      => 5015 order_fullpermition
 // PaymentApi    => 5016 payment_fullpermition
 
-//const baseUrl = "http://10.45.5.20:9001";
-const baseUrl = "http://localhost:5000";
+const baseUrl = process.env.REACT_APP_BASE_URL;
+console.log(baseUrl);
+console.log(process.env);
+
+
+
 
 const customBg = "#008f62";
 

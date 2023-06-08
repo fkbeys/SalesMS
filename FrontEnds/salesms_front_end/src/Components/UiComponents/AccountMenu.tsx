@@ -25,12 +25,18 @@ export default function AccountMenu() {
 
   const signout = useSignOut();
 
-  const handleLogout = () => {
-    setAnchorEl(null);
+  const handleLogout = async () => {
+    // setAnchorEl(null);
     UserInfoManager.DeleteUserToLocalStorage();
-    signout();
     navigate("/");
+    setTimeout(() => {
+      signout();
+    }, 1000);
   };
+
+
+
+
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
