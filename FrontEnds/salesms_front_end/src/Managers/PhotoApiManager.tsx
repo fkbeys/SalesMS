@@ -8,6 +8,10 @@ const SavePhoto = async (model: File, token: string) => {
 
     try {
         const url = Url.PhotoSaveUrl;
+
+        console.log('photoUrl:' + url);
+
+
         let formData = new FormData();
         formData.append('photo', model as File);
         const apiResult = await axios.post<GenericApiResultModelWithPagination<boolean>>(url, formData, {
