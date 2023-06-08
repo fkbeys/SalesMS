@@ -18,6 +18,20 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
+          "Host": "salesms.services.catalog.catalogapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Catalog/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "UpstreamScheme": "http"
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
           "Host": "salesms.services.basket.basketapi",
           "Port": 80
         }
