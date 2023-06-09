@@ -15,4 +15,4 @@ Username: admin
 
 Password: Password12*
 
-Note: This project has 13 containers in docker and it works on a 7 Usd/Month Digital Ocean VPS.
+Note: This project has 14 containers in docker and it works on a 7 Usd/Month Digital Ocean VPS.
