@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "842cd3c3-ca45-43d5-8630-f4a276d5cb05",
+		"name": "SalesMS.Services.Payment.PaymentApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9057605"
+	},
+	"item": [
+		{
+			"name": "/api/Payment/MakePayment/:isSuccessfull",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1Nzg5NkU3RTk4RjcxMEMwOUNCQzNCMTg3M0YwREQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2ODU5MDIzNjQsImV4cCI6MTY4NTkwNTk2NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjpbInJlc291cmNlX2Jhc2tldCIsInJlc291cmNlX2Rpc2NvdW50IiwicmVzb3VyY2VfZ2F0ZXdheSIsInJlc291cmNlX0lkZW50aXR5U2VydmVyQXBpIiwicmVzb3VyY2Vfb3JkZXIiLCJyZXNvdXJjZV9wYXltZW50IiwiaHR0cDovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJXZWJNdmNDbGllbnRGb3JVc2VyIiwic3ViIjoiOTEwMzM0NjctMDgwNC00NzIyLTkyZjEtODk3MjA1MTM4NTg2IiwiYXV0aF90aW1lIjoxNjg1OTAyMzY0LCJpZHAiOiJsb2NhbCIsImp0aSI6IkNDQjE1NzRDMkI5NkJBRDQzOTlGQ0JGNkY2OUY0ODQ1IiwiaWF0IjoxNjg1OTAyMzY0LCJzY29wZSI6WyJiYXNrZXRfZnVsbHBlcm1pdGlvbiIsImRpc2NvdW50X2Z1bGxwZXJtaXRpb24iLCJlbWFpbCIsImdhdGV3YXlfZnVsbHBlcm1pdGlvbiIsIklkZW50aXR5U2VydmVyQXBpIiwib3BlbmlkIiwib3JkZXJfZnVsbHBlcm1pdGlvbiIsInBheW1lbnRfZnVsbHBlcm1pdGlvbiIsInByb2ZpbGUiLCJyb2xlcyIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.XUJmjWzpfJ-dPB5PNn-IsXLSf2fFWXZQly0WapfwK1p6ph3Eer2zgxIdZaOwAUvApOoWY6rV0l3XoWOEt5PQh06hWUHeE2merP8ky-S7ivDHnd2wkD2JdFvu1ND_K2gfEjdguu3p32AuarDWqyJnuc6ByuXxf8yn4pwHXTn6fUM8_nZERWuQ49OcLZtG5mf2i4TeEPfFZB3Bkyz8yF52E637FrdxjwLrrYVJPst4dV-2jp2_HCl7s2IteOzuI35RQrIGzeFlJ8CI25PboWOlMEleG8QMDD-HrowZeXlw_lC6b32RnlGTGgRFnhE_oDhvZla3e2OfKge-wsKWsxPdtQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/Payment/Payment/MakePayment/true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"Payment",
+						"Payment",
+						"MakePayment",
+						"true"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Payment/MakePayment/:isSuccessfull",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Payment",
+								"MakePayment",
+								":isSuccessfull"
+							],
+							"variable": [
+								{
+									"key": "isSuccessfull"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}

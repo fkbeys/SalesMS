@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "25b48fab-f1a0-4c00-b6ff-a25a735b5041",
+		"name": "SalesMS.Services.Order.OrderApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9057605"
+	},
+	"item": [
+		{
+			"name": "/api/Order/GetOrders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1Nzg5NkU3RTk4RjcxMEMwOUNCQzNCMTg3M0YwREQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2ODU5MDIxNjMsImV4cCI6MTY4NTkwNTc2MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjpbInJlc291cmNlX2Jhc2tldCIsInJlc291cmNlX2Rpc2NvdW50IiwicmVzb3VyY2VfZ2F0ZXdheSIsInJlc291cmNlX0lkZW50aXR5U2VydmVyQXBpIiwicmVzb3VyY2Vfb3JkZXIiLCJyZXNvdXJjZV9wYXltZW50IiwiaHR0cDovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJXZWJNdmNDbGllbnRGb3JVc2VyIiwic3ViIjoiOTEwMzM0NjctMDgwNC00NzIyLTkyZjEtODk3MjA1MTM4NTg2IiwiYXV0aF90aW1lIjoxNjg1OTAyMTYyLCJpZHAiOiJsb2NhbCIsImp0aSI6Ijc4QkQ3QURBNkI0Qzc1RjMxMUIwRTBCNEQ1MkE4MjM2IiwiaWF0IjoxNjg1OTAyMTYzLCJzY29wZSI6WyJiYXNrZXRfZnVsbHBlcm1pdGlvbiIsImRpc2NvdW50X2Z1bGxwZXJtaXRpb24iLCJlbWFpbCIsImdhdGV3YXlfZnVsbHBlcm1pdGlvbiIsIklkZW50aXR5U2VydmVyQXBpIiwib3BlbmlkIiwib3JkZXJfZnVsbHBlcm1pdGlvbiIsInBheW1lbnRfZnVsbHBlcm1pdGlvbiIsInByb2ZpbGUiLCJyb2xlcyIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.atUmoEJ1XSvWRQ67R-7FgTfgcf0FOuqQ_Ph4X-9wUTcgpFk7YirPkEvWZow9sg9gZa7vN8MJm3dR1R9Oi8P3Gl8cRWnwwVIq4cvKvJFpW7zTrKrdXef96eJ0y-37j_6rvBTs8JgB7Y-2qZOB1qf-QI3RmfLQSlTXxEBxarv8Y7IcP2W94D1InoVCMckWjDUOpZ1NlxQON8g_u9tkcq1Vic2-6ie7Z5lKIh91NjsS2OwfLWy32AHf8Sz5L66cCBW-oeOTONmWEnxo03IhPBhmSA4WtRX3rPXjvR1yvGNkceRqrJJctxXbEClPa0xGleXiPUPATEn9pe24o1ivNPFF2w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/Order/Order/GetOrders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"Order",
+						"Order",
+						"GetOrders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Order/GetOrders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"GetOrders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "/api/Order/SaveOrders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1Nzg5NkU3RTk4RjcxMEMwOUNCQzNCMTg3M0YwREQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2ODU5MDIxNjMsImV4cCI6MTY4NTkwNTc2MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjpbInJlc291cmNlX2Jhc2tldCIsInJlc291cmNlX2Rpc2NvdW50IiwicmVzb3VyY2VfZ2F0ZXdheSIsInJlc291cmNlX0lkZW50aXR5U2VydmVyQXBpIiwicmVzb3VyY2Vfb3JkZXIiLCJyZXNvdXJjZV9wYXltZW50IiwiaHR0cDovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJXZWJNdmNDbGllbnRGb3JVc2VyIiwic3ViIjoiOTEwMzM0NjctMDgwNC00NzIyLTkyZjEtODk3MjA1MTM4NTg2IiwiYXV0aF90aW1lIjoxNjg1OTAyMTYyLCJpZHAiOiJsb2NhbCIsImp0aSI6Ijc4QkQ3QURBNkI0Qzc1RjMxMUIwRTBCNEQ1MkE4MjM2IiwiaWF0IjoxNjg1OTAyMTYzLCJzY29wZSI6WyJiYXNrZXRfZnVsbHBlcm1pdGlvbiIsImRpc2NvdW50X2Z1bGxwZXJtaXRpb24iLCJlbWFpbCIsImdhdGV3YXlfZnVsbHBlcm1pdGlvbiIsIklkZW50aXR5U2VydmVyQXBpIiwib3BlbmlkIiwib3JkZXJfZnVsbHBlcm1pdGlvbiIsInBheW1lbnRfZnVsbHBlcm1pdGlvbiIsInByb2ZpbGUiLCJyb2xlcyIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.atUmoEJ1XSvWRQ67R-7FgTfgcf0FOuqQ_Ph4X-9wUTcgpFk7YirPkEvWZow9sg9gZa7vN8MJm3dR1R9Oi8P3Gl8cRWnwwVIq4cvKvJFpW7zTrKrdXef96eJ0y-37j_6rvBTs8JgB7Y-2qZOB1qf-QI3RmfLQSlTXxEBxarv8Y7IcP2W94D1InoVCMckWjDUOpZ1NlxQON8g_u9tkcq1Vic2-6ie7Z5lKIh91NjsS2OwfLWy32AHf8Sz5L66cCBW-oeOTONmWEnxo03IhPBhmSA4WtRX3rPXjvR1yvGNkceRqrJJctxXbEClPa0xGleXiPUPATEn9pe24o1ivNPFF2w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1,\n  \n  \"address\": {\n    \"provience\": \"<string>\",\n    \"district\": \"<string>\",\n    \"street\": \"<string>\",\n    \"zipcode\": \"<string>\"\n  },\n  \"buyerId\": \"<string>\",\n  \"orderItems\": [\n    {\n      \"productId\": \"<string>\",\n      \"productName\": \"<string>\",\n      \"pictureUrl\": \"<string>\",\n      \"price\": 3\n    },\n    {\n      \"productId\": \"<string>\",\n      \"productName\": \"<string>\",\n      \"pictureUrl\": \"<string>\",\n      \"price\": 3\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/Order/Order/SaveOrders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"Order",
+						"Order",
+						"SaveOrders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<integer>\",\n  \"createdDate\": \"<dateTime>\",\n  \"address\": {\n    \"provience\": \"<string>\",\n    \"district\": \"<string>\",\n    \"street\": \"<string>\",\n    \"zipcode\": \"<string>\"\n  },\n  \"buyerId\": \"<string>\",\n  \"orderItems\": [\n    {\n      \"productId\": \"<string>\",\n      \"productName\": \"<string>\",\n      \"pictureUrl\": \"<string>\",\n      \"price\": \"<double>\"\n    },\n    {\n      \"productId\": \"<string>\",\n      \"productName\": \"<string>\",\n      \"pictureUrl\": \"<string>\",\n      \"price\": \"<double>\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Order/SaveOrders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"SaveOrders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}

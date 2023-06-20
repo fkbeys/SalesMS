@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "df9a3fb0-7329-4f06-aedc-341224ae71da",
+		"name": "SalesMS.AuthService.AuthApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9057605"
+	},
+	"item": [
+		{
+			"name": "Get Token For Idedity Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "WebMvcClient",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "IdentityServerApi",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/connect/token",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token For Photo Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "WebMvcClient",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "photo_stock_fullpermition",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/connect/token",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token For Catalog Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "WebMvcClient",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "catalog_fullpermition",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/connect/token",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token For User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "WebMvcClientForUser",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password12*",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/connect/token",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\":\"ahmetefe\",\r\n\"password\":\"1234Kaya1882*1*\",\r\n\"email\":\"ahmet@ahmet.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/api/User/Create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"api",
+						"User",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1Nzg5NkU3RTk4RjcxMEMwOUNCQzNCMTg3M0YwREQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2ODU5MDI4MzYsImV4cCI6MTY4NTkwNjQzNiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjpbInJlc291cmNlX2Jhc2tldCIsInJlc291cmNlX2Rpc2NvdW50IiwicmVzb3VyY2VfZ2F0ZXdheSIsInJlc291cmNlX0lkZW50aXR5U2VydmVyQXBpIiwicmVzb3VyY2Vfb3JkZXIiLCJyZXNvdXJjZV9wYXltZW50IiwiaHR0cDovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJXZWJNdmNDbGllbnRGb3JVc2VyIiwic3ViIjoiOTEwMzM0NjctMDgwNC00NzIyLTkyZjEtODk3MjA1MTM4NTg2IiwiYXV0aF90aW1lIjoxNjg1OTAyODM2LCJpZHAiOiJsb2NhbCIsImp0aSI6Ijc3NDYwOTcyQzhGQjYxMTVDMTdFQkEzRDNGRkUwNURBIiwiaWF0IjoxNjg1OTAyODM2LCJzY29wZSI6WyJiYXNrZXRfZnVsbHBlcm1pdGlvbiIsImRpc2NvdW50X2Z1bGxwZXJtaXRpb24iLCJlbWFpbCIsImdhdGV3YXlfZnVsbHBlcm1pdGlvbiIsIklkZW50aXR5U2VydmVyQXBpIiwib3BlbmlkIiwib3JkZXJfZnVsbHBlcm1pdGlvbiIsInBheW1lbnRfZnVsbHBlcm1pdGlvbiIsInByb2ZpbGUiLCJyb2xlcyIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.zzkZ5yPBj3_3qy4WDF_czGO6s_TbasfNqc0Fy3v_qXFsYSVyJS6WfUDo-BdN2Ul77FTyA9cT_HTxfND1CogIToYHAFxbiOeK9OPKTwxjS3jCkK17RxCPidLkrnU0tWUKnSVhqijiF2wrCKIdtq7jgk_IMCjjL2FQF7eWLxhs2zqTwwUfMgyw3P4YHo08BRPgWNAtFB9KokIe40e6Sjui3BR3qh-HtdFYLj5_vGom94HT9m1ngtfDNXORC3g4BHOxU5zr4ZO5ZRu7RUr_q1pxXTzVpQohNB9g-MtDE97UcAZIqO6XmIn1H6d3BbaWOeMXUGIQHJBoUo-xboYMoE6vbw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1Nzg5NkU3RTk4RjcxMEMwOUNCQzNCMTg3M0YwREQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2ODU0Nzg3NDYsImV4cCI6MTY4NTQ4MjM0NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyIsImNsaWVudF9pZCI6IldlYk12Y0NsaWVudEZvclVzZXIiLCJzdWIiOiI5NWVmMzRhZS00YTFjLTQ4ZmEtODUwNC03OGIzMWI5M2Q1MzIiLCJhdXRoX3RpbWUiOjE2ODU0Nzg3NDYsImlkcCI6ImxvY2FsIiwianRpIjoiOTA4MDEzRERDMjI1MEFBNTREQzVBNEYzNjNDM0QyOUYiLCJpYXQiOjE2ODU0Nzg3NDYsInNjb3BlIjpbImVtYWlsIiwib3BlbmlkIiwicHJvZmlsZSIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.Ro4SRlCCnsS54Od3diPuhaJ_8s3sTnxcVT7Gk6OkcR9JgNPPe8Ioh2chF-9RgOGyXDRQF-n4BAiglC_Jc42cC5OOoI00GauV3IPA8oUBuQSL4d7SAu3GVF-qEx4DAAgGpqYwm0NAQPu6lNOOPcapUI86uXhxrZ5eNHNJ51LQ88R4gLB-dPGcSkuADaMRjiZqXGfynGOf8r1jxwv4XVG_VP7X_4DcwVWdBoBheUf0zAAjY_ASB3rkmzQ3QJDvYYoyp66nNXys5ZCoKfl21C6DdaDpfXofRkfbXB-ntp7LojxEmVFJT6fW6k5ISHMDuxknLYOnwkQMnOVaK0Jv3etO2w",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/auth/api/User/GetUser",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"api",
+						"User",
+						"GetUser"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "cd510cdc-bba6-4c80-9528-33de472358c4",
+		"name": "SalesMS.Services.PhotoStock.PhotoStockApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9057605"
+	},
+	"item": [
+		{
+			"name": "/api/Photo/SavePhoto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/Kaya/Pictures/6477858cv1d.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/Photostock/Photo/SavePhoto",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"Photostock",
+						"Photo",
+						"SavePhoto"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"value": "<string>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Photo/SavePhoto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Photo",
+								"SavePhoto"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "/api/Photo/DeletePhoto/:fileName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/Photostock/Photo/DeletePhoto/6477858cv1d.jpg",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"Photostock",
+						"Photo",
+						"DeletePhoto",
+						"6477858cv1d.jpg"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Photo/DeletePhoto/:fileName",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Photo",
+								"DeletePhoto",
+								":fileName"
+							],
+							"variable": [
+								{
+									"key": "fileName"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}

@@ -1,0 +1,709 @@
+{
+	"info": {
+		"_postman_id": "b41ceb5a-8102-4c74-b204-d3ba5be73c43",
+		"name": "SalesMS.Services.Catalog.CatalogApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9057605"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "/api/Category/GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Category/GetAll",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Category",
+								"GetAll"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Category/GetAll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Category",
+										"GetAll"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Category/Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Category/Create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Category",
+								"Create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Category/Create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Category",
+										"Create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Category/FindById/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Category/FindById/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Category",
+								"FindById",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Category/FindById/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Category",
+										"FindById",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Category/Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Category/Update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Category",
+								"Update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Category/Update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Category",
+										"Update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Category/Delete/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Category/Delete/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Category",
+								"Delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Category/Delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Category",
+										"Delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "/api/Course/GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Course/GetAll",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Course",
+								"GetAll"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Course/GetAll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Course",
+										"GetAll"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Course/Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"decription\": \"<string>\",\n  \"price\": \"<double>\",\n  \"picture\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"feature\": {\n    \"duration\": \"<integer>\"\n  },\n  \"categoryId\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Course/Create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Course",
+								"Create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"decription\": \"<string>\",\n  \"price\": \"<double>\",\n  \"picture\": \"<string>\",\n  \"userId\": \"<string>\",\n  \"feature\": {\n    \"duration\": \"<integer>\"\n  },\n  \"categoryId\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Course/Create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Course",
+										"Create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Course/FindById/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Course/FindById/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Course",
+								"FindById",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Course/FindById/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Course",
+										"FindById",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Course/GetAllByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Course/GetAllByUserId/ahmet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Course",
+								"GetAllByUserId",
+								"ahmet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Course/GetAllByUserId?id=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Course",
+										"GetAllByUserId"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Course/Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"decription\": \"<string>\",\n  \"price\": \"<double>\",\n  \"picture\": \"<string>\",\n  \"createdDateTime\": \"<dateTime>\",\n  \"userId\": \"<string>\",\n  \"feature\": {\n    \"duration\": \"<integer>\"\n  },\n  \"categoryId\": \"<string>\",\n  \"category\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Course/Update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Course",
+								"Update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"decription\": \"<string>\",\n  \"price\": \"<double>\",\n  \"picture\": \"<string>\",\n  \"createdDateTime\": \"<dateTime>\",\n  \"userId\": \"<string>\",\n  \"feature\": {\n    \"duration\": \"<integer>\"\n  },\n  \"categoryId\": \"<string>\",\n  \"category\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Course/Update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Course",
+										"Update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/Course/Delete/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/Course/Delete/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"Course",
+								"Delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Course/Delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Course",
+										"Delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}

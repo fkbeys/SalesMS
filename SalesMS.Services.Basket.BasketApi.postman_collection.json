@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "d2ef4d23-3cc8-42e4-89e3-efeb84e7cc6a",
+		"name": "SalesMS.Services.Basket.BasketApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9057605"
+	},
+	"item": [
+		{
+			"name": "/api/Basket/Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1Nzg5NkU3RTk4RjcxMEMwOUNCQzNCMTg3M0YwREQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2ODU5MDE0MDksImV4cCI6MTY4NTkwNTAwOSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjpbInJlc291cmNlX2Jhc2tldCIsInJlc291cmNlX2Rpc2NvdW50IiwicmVzb3VyY2VfZ2F0ZXdheSIsInJlc291cmNlX0lkZW50aXR5U2VydmVyQXBpIiwicmVzb3VyY2Vfb3JkZXIiLCJyZXNvdXJjZV9wYXltZW50IiwiaHR0cDovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJXZWJNdmNDbGllbnRGb3JVc2VyIiwic3ViIjoiOTEwMzM0NjctMDgwNC00NzIyLTkyZjEtODk3MjA1MTM4NTg2IiwiYXV0aF90aW1lIjoxNjg1OTAxNDA5LCJpZHAiOiJsb2NhbCIsImp0aSI6IjY4NERCNTc0MjgxNURBN0I5QjIzRjBDMTAxOEY3ODA5IiwiaWF0IjoxNjg1OTAxNDA5LCJzY29wZSI6WyJiYXNrZXRfZnVsbHBlcm1pdGlvbiIsImRpc2NvdW50X2Z1bGxwZXJtaXRpb24iLCJlbWFpbCIsImdhdGV3YXlfZnVsbHBlcm1pdGlvbiIsIklkZW50aXR5U2VydmVyQXBpIiwib3BlbmlkIiwib3JkZXJfZnVsbHBlcm1pdGlvbiIsInBheW1lbnRfZnVsbHBlcm1pdGlvbiIsInByb2ZpbGUiLCJyb2xlcyIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.hyoqj9PfCDM2kYCdHuxdLUI_OjN55njGV9pDgjbnYxbbdbSfN0R-ojwNjhZqSwFfuyggcjdG1Pj79I31zTOsn3hVgcyD9WBuwBon93pTmIfHczgSMMrRbn7JHj6ub0g7qQsYVTGfJ4MEIalZD3QPa612W4of9Vu0rFHbgdyl8kUFlUuPtf5w5w_uOrNxcKQtdqd-bRyqwQRHzuCuZYopkhQvvfX4QdJ7VNheOPXbx2ttDM4QKXKHHjlB75tCZ4MTc35sVk7FrWP0saiAqgm1A15CnPxIySEfPLz8fqDZ2j3MxQE0Z90SLXc12_dtkIXKDBobACehbQ9totSXNLNjTA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/Basket/Basket/Delete",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"Basket",
+						"Basket",
+						"Delete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Basket/Delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Basket",
+								"Delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "/api/Basket/SaveOrUpdate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1Nzg5NkU3RTk4RjcxMEMwOUNCQzNCMTg3M0YwREQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2ODU5MDE0MDksImV4cCI6MTY4NTkwNTAwOSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjpbInJlc291cmNlX2Jhc2tldCIsInJlc291cmNlX2Rpc2NvdW50IiwicmVzb3VyY2VfZ2F0ZXdheSIsInJlc291cmNlX0lkZW50aXR5U2VydmVyQXBpIiwicmVzb3VyY2Vfb3JkZXIiLCJyZXNvdXJjZV9wYXltZW50IiwiaHR0cDovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJXZWJNdmNDbGllbnRGb3JVc2VyIiwic3ViIjoiOTEwMzM0NjctMDgwNC00NzIyLTkyZjEtODk3MjA1MTM4NTg2IiwiYXV0aF90aW1lIjoxNjg1OTAxNDA5LCJpZHAiOiJsb2NhbCIsImp0aSI6IjY4NERCNTc0MjgxNURBN0I5QjIzRjBDMTAxOEY3ODA5IiwiaWF0IjoxNjg1OTAxNDA5LCJzY29wZSI6WyJiYXNrZXRfZnVsbHBlcm1pdGlvbiIsImRpc2NvdW50X2Z1bGxwZXJtaXRpb24iLCJlbWFpbCIsImdhdGV3YXlfZnVsbHBlcm1pdGlvbiIsIklkZW50aXR5U2VydmVyQXBpIiwib3BlbmlkIiwib3JkZXJfZnVsbHBlcm1pdGlvbiIsInBheW1lbnRfZnVsbHBlcm1pdGlvbiIsInByb2ZpbGUiLCJyb2xlcyIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.hyoqj9PfCDM2kYCdHuxdLUI_OjN55njGV9pDgjbnYxbbdbSfN0R-ojwNjhZqSwFfuyggcjdG1Pj79I31zTOsn3hVgcyD9WBuwBon93pTmIfHczgSMMrRbn7JHj6ub0g7qQsYVTGfJ4MEIalZD3QPa612W4of9Vu0rFHbgdyl8kUFlUuPtf5w5w_uOrNxcKQtdqd-bRyqwQRHzuCuZYopkhQvvfX4QdJ7VNheOPXbx2ttDM4QKXKHHjlB75tCZ4MTc35sVk7FrWP0saiAqgm1A15CnPxIySEfPLz8fqDZ2j3MxQE0Z90SLXc12_dtkIXKDBobACehbQ9totSXNLNjTA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"<string>\",\n  \"discountCode\": \"<string>\",\n  \"basketItem\": [\n    {\n      \"courseId\": \"<string>\",\n      \"courseName\": \"<string>\",\n      \"price\": 2\n    },\n    {\n      \"courseId\": \"<string>\",\n      \"courseName\": \"<string>\",\n      \"price\": 2\n    }\n  ],\n  \"totalPrice\": \"<double>\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/Basket/Basket/SaveOrUpdate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"Basket",
+						"Basket",
+						"SaveOrUpdate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"<string>\",\n  \"discountCode\": \"<string>\",\n  \"basketItem\": [\n    {\n      \"courseId\": \"<string>\",\n      \"courseName\": \"<string>\",\n      \"price\": \"<double>\"\n    },\n    {\n      \"courseId\": \"<string>\",\n      \"courseName\": \"<string>\",\n      \"price\": \"<double>\"\n    }\n  ],\n  \"totalPrice\": \"<double>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Basket/SaveOrUpdate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Basket",
+								"SaveOrUpdate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "/api/Basket/GetBasket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1Nzg5NkU3RTk4RjcxMEMwOUNCQzNCMTg3M0YwREQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2ODU5MDE0MDksImV4cCI6MTY4NTkwNTAwOSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjpbInJlc291cmNlX2Jhc2tldCIsInJlc291cmNlX2Rpc2NvdW50IiwicmVzb3VyY2VfZ2F0ZXdheSIsInJlc291cmNlX0lkZW50aXR5U2VydmVyQXBpIiwicmVzb3VyY2Vfb3JkZXIiLCJyZXNvdXJjZV9wYXltZW50IiwiaHR0cDovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJXZWJNdmNDbGllbnRGb3JVc2VyIiwic3ViIjoiOTEwMzM0NjctMDgwNC00NzIyLTkyZjEtODk3MjA1MTM4NTg2IiwiYXV0aF90aW1lIjoxNjg1OTAxNDA5LCJpZHAiOiJsb2NhbCIsImp0aSI6IjY4NERCNTc0MjgxNURBN0I5QjIzRjBDMTAxOEY3ODA5IiwiaWF0IjoxNjg1OTAxNDA5LCJzY29wZSI6WyJiYXNrZXRfZnVsbHBlcm1pdGlvbiIsImRpc2NvdW50X2Z1bGxwZXJtaXRpb24iLCJlbWFpbCIsImdhdGV3YXlfZnVsbHBlcm1pdGlvbiIsIklkZW50aXR5U2VydmVyQXBpIiwib3BlbmlkIiwib3JkZXJfZnVsbHBlcm1pdGlvbiIsInBheW1lbnRfZnVsbHBlcm1pdGlvbiIsInByb2ZpbGUiLCJyb2xlcyIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.hyoqj9PfCDM2kYCdHuxdLUI_OjN55njGV9pDgjbnYxbbdbSfN0R-ojwNjhZqSwFfuyggcjdG1Pj79I31zTOsn3hVgcyD9WBuwBon93pTmIfHczgSMMrRbn7JHj6ub0g7qQsYVTGfJ4MEIalZD3QPa612W4of9Vu0rFHbgdyl8kUFlUuPtf5w5w_uOrNxcKQtdqd-bRyqwQRHzuCuZYopkhQvvfX4QdJ7VNheOPXbx2ttDM4QKXKHHjlB75tCZ4MTc35sVk7FrWP0saiAqgm1A15CnPxIySEfPLz8fqDZ2j3MxQE0Z90SLXc12_dtkIXKDBobACehbQ9totSXNLNjTA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/Basket/Basket/GetBasket",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"Basket",
+						"Basket",
+						"GetBasket"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Basket/GetBasket",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Basket",
+								"GetBasket"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}
